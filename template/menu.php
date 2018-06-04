@@ -62,7 +62,7 @@
                      <span class="toggle_nav_button"></span>
                   </li>
                   <li><a href="#">Tin tức</a></li>
-                  <li><a href="#">Liên hệ</a></li>
+                  <li><a href="?controller=Contact&action=show">Liên hệ</a></li>
                </ul>
             </nav>
          </div>
