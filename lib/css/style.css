@@ -94,23 +94,21 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 	color: #545454;
 	font-size: 16px;
+	background: #bfbfbf;
+}
+.container {
+	background: #9bce5b;
 }
 
 .left-sidebar {
-	width: 25%;
+	width: 25.64%;
 	padding: 0;
 	overflow: hidden;
 }
-
 .main-container {
-    background: #ffffff;
+	width:74.3604%;
+	background: #ffffff;
 }
-
-.main-container > .row {
-    padding: 0;
-    margin: 0;
-}
-
 a {
 	color:#0d0d0d;
 	-webkit-transition: color .25s ease;

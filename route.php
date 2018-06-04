@@ -12,9 +12,6 @@ function call($controller, $action) {
 			require_once 'Model/User.php';
 			$controller = new UserController();
 			break;
-                case 'Contact':
-                        $controller = new ContactController();
-			break;
 	}
 
 	// call the action
@@ -24,9 +21,7 @@ function call($controller, $action) {
 // just a list of the controllers we have and their actions
 // we consider those "allowed" values
 $controllers = array('HomePage' => ['home', 'error'],
-		     'User' => ['showAll', 'addUser'],
-                     'Contact' => ['show', 'error'],
-    );
+		     'User' => ['showAll', 'addUser']);
 
 // check that the requested controller and action are both allowed
 // if someone tries to access something else he will be redirected to the error action of the pages controller
