@@ -1,0 +1,140 @@
+.main-menu {
+    display: block !important;
+    width: 25.6% !important;
+    height: 100% !important;
+}
+
+.btn-search p, .btn-cart p {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-search {
+    margin-top: 20px;
+    border: 1px solid silver;
+    border-radius: 15px;
+    background: white;
+    padding: 5px 10px;
+    float: right;
+    text-align: center;
+    width: 18%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-cart {
+    margin-top: 20px;
+    padding: 5px 0;
+    background: white;
+    text-align: center;
+    border-radius: 15px;
+    width: 75%;
+    float: left;
+    cursor: pointer;
+}
+
+.menu-children {
+    display: none;
+    position: absolute;
+    left: 100%;
+    height: 100%;
+    width: 200px;
+    background: #85c13a;
+    top: 0;
+}
+
+.item-menu-children {
+    margin: 10px auto 5px auto;
+}
+
+.item-menu-children p{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.item-menu-children img {
+    margin: 0 auto;
+    display: block;
+}
+
+.menu-input-search {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid silver;
+    background: #9bce5b;
+    color: white;
+    border-radius: 10px;
+}
+
+/*.modal-search {*/
+
+/*}*/
+
+/*.modal-search-input {*/
+    /*border-radius: 10px !important;*/
+    /*min-height: 0 !important;*/
+/*}*/
+
+.modal-search {
+    display: none;
+    position: fixed ;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 204, 4, 0.58);
+    z-index: 9999;
+}
+
+.modal-search-form {
+    width: 40%;
+    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-search-btn-close {
+    float: right;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding-right: 3%;
+}
+
+.modal-search-input-group {
+    color: white;
+    border-bottom: 2px solid white;
+    margin: 5% 0;
+}
+
+.modal-search-input-group input, .modal-search-input-group button {
+    background: transparent;
+    border: none;
+}
+
+.modal-search-input-group input {
+    width: 90%;
+    padding: 10px;
+    font-size: 26px;
+}
+
+.modal-search-input-group input::placeholder {
+    color: white;
+}
+
+.modal-search-input-group button {
+    width: 10%;
+    padding: 10px;
+    float: right;
+}
+
+.radio-group {
+    padding: 5px 20px 0 0;
+    font-size: 18px;
+}
+
+.radio-group label {
+    margin-left: 5px;
+}
