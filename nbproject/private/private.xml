@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/phpProject/View/layout.php</file>
-            <file>file:/C:/wamp64/www/phpProject/template/libTemplate.php</file>
-            <file>file:/C:/wamp64/www/phpProject/images/home/logo_1.png</file>
-            <file>file:/C:/wamp64/www/phpProject/template/header.php</file>
-            <file>file:/C:/wamp64/www/phpProject/images/home/logo.png</file>
-            <file>file:/C:/wamp64/www/phpProject/images/home/logo_3.png</file>
-            <file>file:/C:/wamp64/www/phpProject/template/menu.php</file>
-            <file>file:/C:/wamp64/www/phpProject/View/pages/home/ViewHomePage.php</file>
-            <file>file:/C:/wamp64/www/phpProject/template/sidebar.php</file>
-            <file>file:/C:/wamp64/www/phpProject/route.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/route.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/View/pages/contact/contact.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/Controller/ContactController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/lib/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/lib/css/myStyle.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/template/menu.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/myProject/phpProject/View/layout.php</file>
         </group>
     </open-files>
 </project-private>

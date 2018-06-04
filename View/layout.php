@@ -11,23 +11,24 @@
    </head>
    <body class="home" cz-shortcut-listen="true">
      <!-- Menu -->
-     <?php require_once 'template/menu.php'; ?>
-      <!-- End Header --> 
-      <!-- Content -->
-      <div class="container-fluid main-content">
+     <div class="container-fluid">
          <div class="row">
-            <!-- Main Container -->
-            <div id="main-container" class="main-container pull-right">
-         <?php  //include ("View/ViewHomePage.php")
-                  //$VIEW_CONTENT = "View/pages/home/ViewHomePage.php";
-                  require_once('route.php');
-          ?>
-            </div>
+             <div class="col-sm-3">
+                      <?php require_once 'template/menu.php'; ?>
+             </div>
+             <div class="col-sm-9">
+                <div class="main-content">
+                   <div class="row">
+                       <div id="main-container" class="main-container pull-right" style="width: 100%">
+                            <?php  //include ("View/ViewHomePage.php")
+                            //$VIEW_CONTENT = "View/pages/home/ViewHomePage.php";
+                            require_once('route.php');
+                            ?>
+                      </div>
+                   </div>
+                </div>
+             </div>
          </div>
-      </div>
-      <!-- End Content -->
-      <!-- Sidebar -->
-      <!-- End Sidebar -->
-      <!-- Footer -->
+     </div>
    </body>
 </html>
