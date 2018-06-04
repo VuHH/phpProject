@@ -1,7 +1,4 @@
-<div class="container-fluid main-content">
-         <div class="row">
-            <!-- Main Container -->
-            <div id="main-container" class="main-container pull-right">
+
                <!-- Top Section -->
                <section id="top-section" class="parallax-style" style="background-position: 50% -318px;">
                   <div class="top-section overlay-normal">
@@ -927,7 +924,7 @@
                </section>
                <!-- /#contact -->
                <!-- Contact Us End -->
-            </div>
+           
             <!-- /#main-container -->
             <!-- Main Container End -->
             <div id="scroll-to-top" class="right-fix-btn" style="display: block; right: 89.5px;">
@@ -954,4 +951,4 @@
             <!-- Footer Section End -->
          </div>
          <!-- /.row --> 
-      </div>
+     
