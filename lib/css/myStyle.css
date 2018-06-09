@@ -69,14 +69,19 @@
     border-radius: 10px;
 }
 
-/*.modal-search {*/
+.menu-children-form {
+    cursor: pointer;
+    position: relative;
+}
 
-/*}*/
-
-/*.modal-search-input {*/
-    /*border-radius: 10px !important;*/
-    /*min-height: 0 !important;*/
-/*}*/
+.menu-children-form-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    top: 0;
+}
 
 .modal-search {
     display: none;
@@ -154,4 +159,202 @@
     margin-left: 0;
     color: green;
     font-weight: bold;
+}
+
+/* Food Detail */
+
+.detail-image {
+    width: 100%;
+}
+
+.field-detail {
+    padding: 5px 0;
+    border-bottom: 1px solid silver;
+    text-transform: uppercase;
+}
+
+.field-detail.title {
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.field-detail.price {
+    font-weight: bold;
+}
+
+.field-detail.review {
+    text-transform: lowercase;
+}
+
+.field-detail.menu {
+    text-align: right;
+    cursor: pointer;
+}
+
+/* Setting card */
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+/* ... */
+
+.comment {
+    padding: 15px 0;
+    width: 100%;
+}
+
+.comment .card {
+    position:relative;
+}
+
+.comment .card .card-body, .comment .card .card-header {
+    padding: 0.7rem;
+}
+
+.comment .card>.card-header:after,.comment .card>.card-header:before{
+    position:absolute;
+    top:11px;left:-16px;
+    right:100%;
+    width:0;
+    height:0;
+    display:block;
+    content:" ";
+    border-color:transparent;
+    border-style:solid solid outset;
+    pointer-events:none;
+}
+
+.comment .card>.card-header:after{
+    border-width:7px;
+    border-right-color:#f7f7f7;
+    margin-top:1px;
+    margin-left:2px;
+}
+
+.comment .card>.card-header:before{
+    border-right-color:#ddd;
+    border-width:8px;
+}
+
+/* ... */
+
+
+.reply-comment {
+    margin: 1.5% 0;
+}
+
+.title-reply-comment {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2% 0;
+}
+
+.form-reply {
+    font-size: 12px;
+}
+
+.input-comment {
+    font-size: 14px;
+    padding: 3%;
+    width: 100%;
+    height: 100px;
+
+
+    border-radius: 3px;
+    border: 1px solid silver;
+}
+
+.data-user {
+    padding: 1%;
+    width: 100%;
+    margin: 1% 0;
+}
+
+.submit-comment {
+    text-transform: uppercase;
+    margin: 1% 0;
+}
+
+/* Category */
+
+h2 {
+    margin: 5%;
+}
+
+.container {
+    padding-top: 2%;
+}
+
+.food-review {
+    margin-bottom: 2%;
+}
+
+.category-form button {
+    border: none;
+    padding: 0;
+}
+
+.category-title {
+    margin: 0 0 3% 0 !important;
+}
+
+.myCategory {
+    margin-bottom: 10% !important;
+}
+
+.category-line {
+    border-top: 2px solid red;
+}
+
+.category-price {
+    color: red;
+    font-weight: bold;
+    float: left;
+    font-size: 16px;
+}
+
+.category-price .currency {
+    font-size: 20px;
+}
+
+.category-button {
+    float: right;
+    font-weight: bold;
+    color: red;
+    margin-top: 2.5%;
+    cursor: pointer;
 }

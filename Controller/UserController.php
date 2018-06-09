@@ -3,7 +3,7 @@
 class UserController {
 	public function showAll() {
 	    $lstUsers = User::showAll();
-		require_once 'View/pages/user/index.php';
+            require_once 'View/pages/user/index.php';
 	}
 	public function addUser() {
 	    $id = $_POST["userId"];

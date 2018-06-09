@@ -23,7 +23,7 @@
          <button type="button" class="btn menubar-toggle">
          <i class="fa fa-bars"></i>
          </button>
-         <div id="main-menu" class="navbar navbar-default">
+         <div class="navbar navbar-default">
             <div class="navbar-header">
                <a class="navbar-brand" href="#">
                <img src="./images/home/logo.png" alt="Foody Logo">
@@ -57,31 +57,45 @@
             <nav class="navbar-collapse clearfix" role="navigation">
                <ul id="headernavigation" class="nav navbar-nav">
                   <li><a href="#">Trang chủ</a></li>
+                  
                   <li class="menu-item-has-children">
                      <a href="#">Thực đơn</a>
                      <span class="toggle_nav_button"></span>
                   </li>
+                  
                   <li><a href="#">Tin tức</a></li>
                   <li><a href="?controller=Contact&action=show">Liên hệ</a></li>
                </ul>
             </nav>
          </div>
          <div class="menu-children">
-            <div class="item-menu-children">
-               <p class="text-center">Phần ăn combo</p>
-               <img src="https://kfcvietnam.com.vn/uploads/category/combo/15fa763ae52ca6af3fc26d9b1b298b1e.png" alt="Menu">
-            </div>
-            <div class="item-menu-children">
-               <p class="text-center">Gà rán</p>
-               <img src="https://kfcvietnam.com.vn/uploads/category/c4b40a0d1cc36a0668d7debd0416343e.png" alt="Menu">
-            </div>
-            <div class="item-menu-children">
-               <p class="text-center">Phần ăn combo</p>
-               <img src="https://kfcvietnam.com.vn/uploads/category/combo/15fa763ae52ca6af3fc26d9b1b298b1e.png" alt="Menu">
-            </div>
-            <div class="item-menu-children">
-               <p class="text-center">Gà rán</p>
-               <img src="https://kfcvietnam.com.vn/uploads/category/c4b40a0d1cc36a0668d7debd0416343e.png" alt="Menu">
-            </div>
+             <?php ?>
          </div>
       </div>
+
+<script>
+    $('.toggle_nav_button').click(function() {
+        $.ajax({
+          type: 'post',
+          url: 'index.php?controller=Menu&action=show',
+          data: '',
+          success: function (data) {
+            let myArr = data.split("-***myJSONFastFood***-");
+            let myJson = JSON.parse(myArr[1]);
+            var output = "";
+            for (var i = 0; i < myJson.length; i++) {
+                output +=
+                    "<form action='?controller=FoodCategory&action=show' method='post' class='menu-children-form' >" +
+                        "<div class='item-menu-children'>" +
+                            "<p class='text-center'>" + myJson[i].name + "</p>" +
+                            "<img src=" + myJson[i].image + " alt='Menu'>" +
+                        "</div>" +
+                        "<input type='hidden' name='typeID' value='" + myJson[i].id + "'>" +
+                        "<button class='menu-children-form-button' type='submit'></button>" +
+                    "</form>";
+            }
+            $('.menu-children').html(output);
+          }
+        });
+    });
+</script>

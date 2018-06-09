@@ -15,7 +15,8 @@
 <link href="./lib/css/style.css" rel="stylesheet">
 <link href="./lib/css/responsive.css" rel="stylesheet">
 <link href="./lib/css/contact/styleContact.css"/>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+      <script src="lib/jQuery/jquery-3.3.1.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
