@@ -11,8 +11,6 @@
 * Tags: html, themplate, foody, restaurant  Jewel Theme
 * ---------------------------------------------------------------------- */
 
-
-
 /*---------------------------------------------------------------------- /
 Table of Contents
 ------------------------------------------------------------------------ /
@@ -78,8 +76,13 @@ Table of Contents End
 
 /* 1 - Google Font
 ------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /*@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
+=======
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+/*@import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);*/
+>>>>>>> chi1
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
 @import url(https://fonts.googleapis.com/css?family=Chewy);*/
 
@@ -217,7 +220,7 @@ h5,
 h6 {
 	color: #1a1a1a;
 	font-weight: 700;
-	font-family: 'BenchNine', sans-serif;
+	/*font-family: 'BenchNine', sans-serif;*/
 	text-transform: uppercase;
 	margin: 15px 0;
 }

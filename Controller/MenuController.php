@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> chi1
 class MenuController {
     
 	public function show() {
@@ -11,4 +15,9 @@ class MenuController {
             die();
 	}
 }
+<<<<<<< HEAD
 ?>
+=======
+
+?>
+>>>>>>> chi1
