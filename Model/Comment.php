@@ -46,26 +46,7 @@ class Comment {
             
            
 //            return $result;
-            $conn->close();
-<<<<<<< HEAD
-            
-            //select * from food f, comment c where f.FoodId = c.FoodId 
-=======
->>>>>>> chi1
-	}
-        
-        public function getComment($foodID) {
-            // Lay comment theo foodID
-<<<<<<< HEAD
-//            select c.CommentContent, f.FoodID, f.FoodName, c.AnwserComment 
-//                    from food f, comment c where f.FoodID = c.FoodID and c.FoodId  = foodID 
-=======
-            $sql2 = 'select c.CommentContent, f.FoodID, f.FoodName, c.AnwserComment 
-                    from food f, comment c where f.FoodID = c.FoodID and c.FoodId  = foodID';
->>>>>>> chi1
-                    
-                    
-            
+            $conn->close();        
         }
 }
 

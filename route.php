@@ -38,6 +38,7 @@ function call($controller, $action) {
                 case 'FoodCategory':
                         require_once 'Model/FoodCategory.php';
                         $controller = new FoodCategoryController();
+                        break;
                 case 'Comment':
                     require_once 'Model/Comment.php';
                     $controller = new CommentController();
