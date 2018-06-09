@@ -43,6 +43,21 @@ function call($controller, $action) {
                     require_once 'Model/Comment.php';
                     $controller = new CommentController();
                     break;
+                case 'GioHang':
+                        $controller = new GioHangController();
+			break;
+                case 'DangNhapDatHang':
+                        $controller = new DangNhapDatHangController();
+			break;
+                case 'MuaHangKhongTaiKhoan':
+                        $controller = new MuaHangKhongTaiKhoanController();
+			break;
+                case 'ThongTinGiaoHang':
+                        $controller = new ThongTinGiaoHangController();
+			break;
+                case 'ThankYou':
+                        $controller = new ThankYouController();
+			break;
     }
 
 	// call the action
@@ -60,7 +75,12 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'Menu' => ['show', 'error'],
                      'FoodDetail' => ['show', 'error'],
                      'FoodCategory' => ['show', 'error'],
-                     'Comment' => ['addComment', 'error']
+                     'Comment' => ['addComment', 'error'],
+                     'GioHang' => ['show', 'error'],
+                     'DangNhapDatHang' => ['signin', 'error'],
+                     'MuaHangKhongTaiKhoan' => ['show', 'error'],
+                     'ThongTinGiaoHang' => ['show', 'error'],
+                     'ThankYou' => ['show', 'error']
     );
 
 // check that the requested controller and action are both allowed

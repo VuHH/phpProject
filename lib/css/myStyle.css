@@ -359,3 +359,462 @@ h2 {
     margin-top: 2.5%;
     cursor: pointer;
 }
+.btn-breadcrumb {
+    margin-top: 20px;
+    border: 1px solid #9bce5b;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.btn-breadcrumb li {
+    position: relative;
+}
+
+
+
+.btn-breadcrumb li a  {
+    
+    text-align: center;
+    border-color: #9bce5b;
+    font-family: 'ElleFutura-Bold';
+    font-size: 18px;
+    height: 50px;
+    text-transform: uppercase;
+    cursor: default;
+    padding-top: 12px;
+    margin-bottom: 0;
+}
+.btn-breadcrumb li.active {
+
+    color: #fff;
+    border: 1px solid #9bce5b;
+    background-color: #9bce5b
+}
+
+.btn-breadcrumb li padc {
+    color: while;
+}
+
+body {
+    font-family: 'HelveticaNeue';
+    font-size: 14px;
+    color: #333;
+    background-color: #f8f8f5;
+    padding-right: 0 !important;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline;
+}
+
+
+
+
+.bootstrap-select.btn-group.bs-container .dropdown-menu, .popover {
+z-index: 8060;
+z-index: 9;
+}
+
+
+.popup-sp .option ul li .fa {
+    font-size: 7px;
+    line-height: 1;
+    padding-right: 15px;
+    height: 10px;
+    width: 10px;
+    vertical-align: middle
+}
+
+
+
+.quantity-price-addcart {
+    margin-top: 15px;
+    position: relative
+}
+
+.quantity-price-addcart .right {
+    position: static
+}
+
+.quantity-price-addcart .price {
+    position: static;
+    padding: 0;
+    font-size: 24px;
+    margin-top: 5px;
+    line-height: 24px;
+    display: inline-block;
+    vertical-align: bottom;
+    width: auto;
+}
+
+.quantity-price-addcart .quantity {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-family: 'ElleFutura';
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF0000;
+    border: none;
+    border-radius: 0
+}
+
+.quantity-wap {
+    width: 96px;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.left{
+    font-size: 24px;
+}
+.left span{
+    float: left;
+    font-family: ElleFutura;
+    font-size: 1.5rem;
+}
+
+.popup-sp .quantity-wap {
+    margin-right: 20px;
+}
+
+.quantity-price-addcart .left .sl {
+    display: inline-block;
+    vertical-align: bottom;
+    font-family: ElleFutura;
+    font-size: 1.5rem;
+}
+
+.mid > .price {
+    color: #000;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.quantity-wap .button {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    font-size: 25px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: #a4a4a4;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.quantity-wap .button.inc {
+    right: 0
+}
+
+.quantity-wap .button.dec {
+    left: 0
+}
+
+.btn-add-cart {
+    line-height: 24px;
+    padding: 7px 35px;
+    text-align: center;
+    background-color: #FF0000;
+    border-bottom: 3px solid transparent;
+    font-family: 'ElleFutura-Bold';
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 4px;
+    outline: none !important;
+    margin-top: -5px;
+}
+
+.btn-add-cart:hover {
+    background-color: #ad172b !important;
+}
+
+.box-don-hang {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    margin-top: 18px;
+    background-color: #fff;
+}
+
+.box-don-hang.text-camon {
+    white-space: pre-line;
+    text-align: center;
+    font-size: 18px;
+    background: none;
+    border: none;
+    font-weight: bolder;
+}
+
+.box-don-hang:last-child {
+    margin-bottom: 20px
+}
+
+.box-don-hang .row {
+    margin-left: -10px;
+    margin-right: -10px
+}
+
+.box-don-hang [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.box-don-hang .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.box-don-hang .title {
+    font-family: 'ElleFutura';
+    font-size: 18px;
+    line-height: 56px;
+    height: 56px;
+    color: #fff;
+    background-color: #9bce5b;
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+.box-don-hang .title-ttkh .btn.btn-sua {
+    width: 90px;
+    height: 42px;
+    line-height: 40px;
+    padding: 0;
+    font-size: 17px;
+    text-transform: none;
+    position: absolute;
+    right: 10px;
+    
+    border-radius: 3px;
+}
+
+.box-don-hang .content {
+    padding-bottom: 10px
+}
+
+.box-don-hang .total {
+    width: auto !important;
+}
+
+.box-don-hang .total hr {
+    border-color: #e1e1e1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.box-don-hang .total label.nhan {
+    font-size: 18px !important;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.box-don-hang .total .text-note {
+    font-size: 16px;
+    color: #737373
+}
+
+.box-don-hang .total .price {
+    font-size: 24px;
+    padding: 5px 0 15px
+}
+
+.box-don-hang .total .btn-dk {
+    font-size: 18px !important;
+    width: 170px
+}
+.box-don-hang.list-don-hang {
+    width: auto;
+    min-height: 0;
+}
+
+.box-don-hang.list-don-hang.popup-sp .container-fluid {
+    padding-bottom: 0
+}
+
+.box-don-hang.list-don-hang .item {
+    position: relative
+}
+
+.box-don-hang.list-don-hang .item:first-child {
+    margin-top: 10px
+}
+
+.box-don-hang.list-don-hang .item:before {
+    content: "";
+    background-color: #f6f6f6;
+    height: 44px;
+    width: calc(98%);
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.box-don-hang.list-don-hang .title [class*="col-"] {
+    border-right: 1px solid #9bce5b;
+}
+
+.box-don-hang.list-don-hang .title [class*="col-"]:last-child {
+    border-right: 0
+}
+
+.box-don-hang.list-don-hang .ttsp .tit {
+    height: 44px;
+    line-height: 44px;
+    font-family: 'ElleFutura-Bold';
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    padding-left: 25px
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .edit, .box-don-hang.list-don-hang .ttsp .tit .btn {
+    color: #58595b;
+    font-size: 16px;
+    border-color: #58595b;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0;
+    margin-right: 0;
+    margin-top: -7px
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .button-close {
+    position: static !important;
+    margin-top: -7px;
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .button-close:hover {
+    box-shadow: none;
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .edit:hover {
+    color: #000
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .accordion {
+    line-height: 25px;
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .accordion:hover {
+    color: #000
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .accordion[aria-expanded="true"] .fa:before {
+    content: "\f068"
+}
+
+.box-don-hang.list-don-hang .ttsp .img {
+    padding-left: 25px;
+    margin-top: 7px;
+    margin-bottom: 15px
+}
+
+.box-don-hang.list-don-hang .ttsp .option {
+    color: #58595b;
+    margin-top: 15px;
+    margin-bottom: 10px
+}
+
+.box-don-hang.list-don-hang .sl .quantity-wap {
+    width: 98px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.box-don-hang.list-don-hang .sl .quantity-wap .button {
+    width: 30px;
+    height: 30px;
+    font-size: 36px;
+    font-weight: 300;
+    font-family: Roboto;
+    line-height: 26px;
+    border-radius: 0;
+    border: 1px solid #58595b;
+    text-align: center;
+    background-color: #fff;
+    color: #58595b;
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .edit:hover, .box-don-hang.list-don-hang .sl .quantity-wap .button:hover, .box-don-hang.list-don-hang .ttsp .tit .btn:hover {
+    background-color: #58595b;
+    color: #fff;
+}
+
+.box-don-hang.list-don-hang .sl .quantity-wap .quantity {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #58595b;
+    text-align: center;
+    background-color: #fff;
+    color: #58595b;
+    font-size: 18px;
+    display: inline-block
+}
+
+.box-don-hang.list-don-hang .sl .quantity-wap .button-close, .box-don-hang.list-don-hang .ttsp .tit .button-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    border-color: #58595b;
+    background-color: #fff;
+    text-align: center;
+    color: #58595b;
+    z-index: 9;
+    position: absolute;
+    right: -32px;
+    line-height: 24px;
+    font-size: 18px;
+    padding: 0
+}
+
+.box-don-hang.list-don-hang .sl .quantity-wap .button-close:hover {
+    color: #58595b;
+}
+
+.box-don-hang.list-don-hang .ttsp .tit .pname {
+    position: absolute;
+    left: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 350px;
+}
+
+.btn-breadcrumb li.ttgh{
+  background-color: #9bce5b !important;
+  color: #fff;
+}
+
+.btn-breadcrumb li.ttgh:not(:last-child):after {
+  border-left: 10px solid #f10202;
+}

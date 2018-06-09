@@ -54,8 +54,8 @@ if (!isset($_SESSION))
             <div class="col-sm-12">
                <div class="btn-cart">
                   <p>
-                     <span class="fas fa-shopping-cart"></span>
-                     <span>0 Giỏ hàng</span>
+                     <a href=" ?controller=GioHang&action=show">
+                         <span class="fas fa-shopping-cart">0 Giỏ hàng</span></a>
                   </p>
                </div>
                <div class="btn-search">
