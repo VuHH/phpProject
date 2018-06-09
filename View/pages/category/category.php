@@ -1,10 +1,6 @@
 <div class="row">
     <div class="col-sm-12">
-<<<<<<< HEAD
-        <h2 class="text-center category-title">Danh sÃ¡ch mÃ³n Än</h2>
-=======
         <h2 class="text-center category-title">Danh sách món ăn</h2>
->>>>>>> chi1
         <div class="row food-review">
         <?php 
             foreach ($lstFood as $food) {
