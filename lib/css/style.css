@@ -78,10 +78,10 @@ Table of Contents End
 
 /* 1 - Google Font
 ------------------------------------------------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+/*@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
-@import url(https://fonts.googleapis.com/css?family=Chewy);
+@import url(https://fonts.googleapis.com/css?family=Chewy);*/
 
 /* 1 - Google Font End
 ------------------------------------------------------------------------*/
@@ -91,7 +91,7 @@ Table of Contents End
 ------------------------------------------------------------------------*/
 html,
 body {
-	font-family: 'Ubuntu', sans-serif;
+/*	font-family: 'Ubuntu', sans-serif;*/
 	color: #545454;
 	font-size: 16px;
 }
@@ -616,7 +616,7 @@ textarea.form-control{
 .section-title {
 	background: #ffffff;
 	color: #1a1a1a;
-	font-family: "Dancing Script",sans-serif;
+/*	font-family: "Dancing Script",sans-serif;*/
 	font-size: 1.5em;
 	font-weight: 700;
 	text-transform: inherit;
@@ -856,7 +856,7 @@ nav.navbar-collapse{
 }
 .navbar-default .navbar-nav>li>a {
 	color: #ffffff;
-	font-family: "Dancing Script",sans-serif;
+/*	font-family: "Dancing Script",sans-serif;*/
 	font-weight: 700;
 	font-size: 1.25em;
 	display: inline-block;
@@ -868,7 +868,7 @@ nav.navbar-collapse{
 }
 .navbar-nav>li>.sub-menu>li>a{
 	color: #ffffff;
-	font-family: "Dancing Script",sans-serif;
+/*	font-family: "Dancing Script",sans-serif;*/
 	font-weight: 700;
 	font-size: 1em;
 	line-height: 30px;
@@ -1016,7 +1016,7 @@ nav.navbar-collapse{
 }
 .top-section .top-heading-1 {
 	color: #fcb322;
-	font-family: "Dancing Script",sans-serif;
+/*	font-family: "Dancing Script",sans-serif;*/
 	font-size: 2.8125em;
 	font-weight: 700;
 	padding-top: 100px;

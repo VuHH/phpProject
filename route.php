@@ -15,7 +15,34 @@ function call($controller, $action) {
                 case 'Contact':
                         $controller = new ContactController();
 			break;
-	}
+                case 'SignIn':
+                    require_once 'Model/Customer.php';
+                    $controller = new SignInController();
+	            break;
+                case 'SignUp':
+                    require_once 'Model/Customer.php';
+                    $controller = new SignUpController();
+	            break;
+                case 'Profile':
+                    //require_once 'Model/Customer.php';
+                    $controller = new ProfileController();
+	            break;
+                case 'Menu':
+		    require_once 'Model/Menu.php';
+		    $controller = new MenuController();
+	            break;
+                case 'FoodDetail':
+                        require_once 'Model/FoodDetail.php';
+                        $controller = new FoodDetailController();
+			break;
+                case 'FoodCategory':
+                        require_once 'Model/FoodCategory.php';
+                        $controller = new FoodCategoryController();
+                case 'Comment':
+                    require_once 'Model/Comment.php';
+                    $controller = new CommentController();
+                    break;
+    }
 
 	// call the action
 	$controller->{ $action }();
@@ -26,6 +53,13 @@ function call($controller, $action) {
 $controllers = array('HomePage' => ['home', 'error'],
 		     'User' => ['showAll', 'addUser'],
                      'Contact' => ['show', 'error'],
+                     'SignIn' => ['show', 'loginAction', 'logoutAction', 'error'],
+                     'SignUp' => ['add'],
+                     'Profile' => ['show'],
+                     'Menu' => ['show', 'error'],
+                     'FoodDetail' => ['show', 'error'],
+                     'FoodCategory' => ['show', 'error'],
+                     'Comment' => ['addComment', 'error']
     );
 
 // check that the requested controller and action are both allowed
