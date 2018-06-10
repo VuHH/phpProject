@@ -18,10 +18,11 @@ class FoodDetail {
 
     
     public static function show($foodID,$conn) {
-            $lstFood;
-            $sql = "SELECT * FROM food WHERE FoodID IN ('".$foodID."')";
+            $lstFood = NULL;
+            $sql = "SELECT * FROM food WHERE FoodID = '".$foodID."' ";
+            //echo $sql;
             $result = $conn->query($sql);
-
+            
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                 $sql2 = "SELECT * FROM type WHERE TypeID IN ('".$row["TypeID"]."')";

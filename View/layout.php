@@ -3,9 +3,7 @@
    <head>
       <title>Fast Food</title>
       <!-- Mobile Specific Meta -->
-<<<<<<< HEAD
       <?php include 'template/libTemplate.php'; ?>
-=======
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <?php include 'template/libTemplate.php';?>
       
@@ -21,8 +19,6 @@
               margin: 0;
           }
       </style>
-      
->>>>>>> chi1
    </head>
    <body class="home" cz-shortcut-listen="true">
      <!-- Menu -->
@@ -51,17 +47,9 @@
              </div>  
          </div>
      </div>
-<!--   <footer class="footer" style="margin-top: 50px;">
-         <?php include ("template/footer.php");?>
-   </footer>-->
    </body>
-<<<<<<< HEAD
-
-=======
-   
     <script>
         var body = $('.navbar.navbar-default').height();
         $('.main-content').css('min-height', body + 105);
     </script>
->>>>>>> chi1
 </html>
