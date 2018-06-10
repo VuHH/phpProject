@@ -17,8 +17,22 @@ if (!isset($_SESSION))
          <img src="./images/home/logo.png" alt="Foody Logo" style="margin: 0 auto; display: block">
          </a>
       </div>
-      <div class="navbar-header menu-login">
+      <div class="navbar-header menu-login" id="loginMenu">
+        <div id="notLogin">
+<!--        <div class="row">
+        <div class="col-sm-6">
+                <button class="btn btn-primary" style="width: 100%; margin: 0" 
+                        data-toggle="modal" data-target="#registerModal">Đăng ký</button>
+	</div>
+        <div class="col-sm-6">
+            <a href="?controller=SignIn&action=show">
+                <button class="btn btn-success" id="signInbtn" style="width: 100%; margin: 0" 
+                        onclick="SignIn()">Đăng nhập</button>
+            </a>
+        </div>
+        </div>-->
         <?php
+            ob_start(); 
             if (isset($_SESSION['userName']))
             {
             	$username = $_SESSION["userName"];
@@ -28,7 +42,7 @@ if (!isset($_SESSION))
                 echo '<a href="?controller=Profile&action=show">';
                 echo'<i class="fas fa-user" style="font-size:28px; color: #FFF">&nbsp;' . $username . '&nbsp;</i>';
                 echo'</a>';
-                echo '<a title="Dang Xuat" href="?controller=SignIn&action=logoutAction"><i class="fas fa-power-off" style="font-size:15px">&nbsp;</i></a>';
+                echo '<a title="Dang Xuat" href="" onclick="logout()"><i class="fas fa-power-off" style="font-size:15px">&nbsp;</i></a>';
                 echo '</div>';
                 echo '</div>';
             }
@@ -42,11 +56,12 @@ if (!isset($_SESSION))
                 echo '</div>';
                 echo '<div class="col-sm-6">';
                 echo '<a href="?controller=SignIn&action=show">';
-                echo '<button class="btn btn-success" style="width: 100%; margin: 0">Đăng nhập</button>';
+                echo '<button class="btn btn-success" style="width: 100%; margin: 0" onclick="SignIn()">Đăng nhập</button>';
                 echo '</a></div>';
                 echo '</div>';
             }
             ?>
+          </div>
       </div>
       <div class="navbar-header menu-cart">
          <div class="row">
@@ -173,3 +188,5 @@ if (!isset($_SESSION))
 </div>
 <script src="./lib/js/validateRegisterForm.js" type="text/javascript"></script>
 <script src="./lib/js/appMenu.js" type="text/javascript"></script>
+<script src="./lib/js/appSignIn.js" type="text/javascript"></script>
+<script src="./lib/js/appLogOut.js" type="text/javascript"></script>

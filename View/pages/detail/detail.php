@@ -31,6 +31,7 @@
         <div class="clearfix">
             <?php
             foreach ($lstComment as $comment) {
+                ob_start();
                 echo 
                 '<div class="row comment">
                     <div class="col-sm-6">
@@ -54,7 +55,7 @@
                                
                 
                     if($comment['AnwserComment'] != NULL) {
-                        
+                        ob_start();
                         echo 
                         '<div class="row comment">
                             <div class="col-sm-1"></div>
@@ -82,21 +83,21 @@
             ?>
             
             <!--Enter comment-->
-            
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="reply-comment">
-                        <p class="title-reply-comment">Enter a comment</p>
-                        <?php
-                        echo '<form class="form-reply" method="post" action="" id="formReplyComment" name="form-reply-comment">';
-                        echo '<input type="hidden" name="customerID" value="1"/>';
-                        echo '<input type="hidden" name="foodID" value="'.$lstFood->id.'"/>';
-                        echo '<textarea placeholder="Enter your comment here..." name="txtComment" id="txtComment" class="input-comment" required></textarea>
-                             <button type="submit" name="btnSubmitComment" id="btnSubmitComment" class="submit-comment btn btn-primary">
-                                post comment
-                             </button>
-                             </form>';
-                        ?>
+            <?php 
+                if (isset($_SESSION['userName']) && isset($_SESSION["userID"])) {
+                    $customerID = $_SESSION["userID"];
+                    echo '<div class="row">
+                            <div class="col-sm-6">
+                            <div class="reply-comment">
+                            <p class="title-reply-comment">Enter a comment</p>';
+                    echo '<form class="form-reply" method="post" action="" id="formReplyComment" name="form-reply-comment">';
+                    echo '<input type="hidden" name="customerID" value="'.$customerID.'"/>';
+                    echo '<input type="hidden" name="foodID" value="'.$lstFood->id.'"/>';
+                    echo '<textarea placeholder="Enter your comment here..." name="txtComment" id="txtComment" class="input-comment" required></textarea>
+                    <button type="submit" name="btnSubmitComment" 
+                    id="btnSubmitComment" class="submit-comment btn btn-primary">post comment</button></form>';
+                }
+            ?>
                     </div>
                 </div>
             </div>

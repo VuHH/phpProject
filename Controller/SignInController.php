@@ -19,10 +19,12 @@ class SignInController {
             $customer = NULL;
             $md5Pass = NULL;
             $isValid = TRUE;
+            //$userName= "vuho99";
+            //$md5Pass = md5("456456");
             if (isset($_SESSION['errorLogin'])) {
                 unset($_SESSION['errorLogin']);
             }
-            
+            echo 'Test';
             if (isset($_POST["userName"])) {
                 $userName = $_POST["userName"];
             }
@@ -31,10 +33,11 @@ class SignInController {
                 $md5Pass = md5($userPass);
                 //echo $md5Pass;
             }
+            //echo $userName;
 	    if ($userName != NULL) {
                 $customer = Customer::getCustomer($userName,NULL);
             }
-
+            //print_r($customer);
             if ($customer == NULL) {
                 $_SESSION['errorLogin'] = "Tài khoản của bạn không tồn tại. Vui lòng đăng ký";
                 $isValid = FALSE;
@@ -51,6 +54,7 @@ class SignInController {
                     }
                 }
             }
+            //echo $isValid;
             if ($isValid == TRUE) {
                 $_SESSION["userName"] = $customer->getUsernameCustomer();
                 $_SESSION["fullName"] = $customer->getCustomerName();
@@ -58,7 +62,15 @@ class SignInController {
                 $_SESSION["userAddress"] = $customer->getCustomerAddress();
                 $_SESSION["userPhone"] = $customer->getCustomerPhone();
                 $_SESSION["userID"] = $customer->getCustomerID();
-                header('Location: index.php');
+                $username = $_SESSION["userName"];
+                //echo $username;
+                $myJSON = json_encode($username);
+                ob_clean();
+                require_once('View/pages/home/ViewHomePage.php');
+                echo '-***myJSONSignIn***-';
+                echo $myJSON;
+                die();
+                    
             } else {
                 require_once 'View/pages/signin/signin.php';
             }
@@ -76,8 +88,16 @@ class SignInController {
                 unset($_SESSION['userPhone']);
                 unset($_SESSION['userID']);
             }
-
-            header('Location: index.php');
+            
+            $isValid = 1;
+            $myJSON = json_encode($isValid);
+            ob_clean();
+                //require_once('View/pages/home/ViewHomePage.php');
+            echo '-***myJSONLogout***-';
+            echo $myJSON;
+            die();
+            //header('Location: index.php?controller=HomePage&action=home');
+            //require_once('View/pages/home/ViewHomePage.php');
         }
 }
 ?>
