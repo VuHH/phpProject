@@ -75,6 +75,7 @@ if (!isset($_SESSION))
             </li>
             <li><a href="#">Tin tức</a></li>
             <li><a href="?controller=Contact&action=show">Liên hệ</a></li>
+            <li><a href="?controller=GioiThieu&action=show">Giới Thiệu</a></li>
          </ul>
       </nav>
    </div>
@@ -82,21 +83,21 @@ if (!isset($_SESSION))
    </div>
 </div>
 <div class="modal-search">
-   <form class="modal-search-form">
-      <div class="modal-search-btn-group">
+   <form class="modal-search-form" action="?controller=ShowSearch&action=show" method="post">
+      <div class="modal-search-btn-group" >
          <button type="button" class="modal-search-btn-close"><i class="fas fa-close"></i></button>
       </div>
       <div class="modal-search-input-group">
-         <input type="text" class="modal-search-input" placeholder="Nhập món ăn cần tìm">
+         <input type="text" name="search" class="modal-search-input" placeholder="Nhập món ăn cần tìm">
          <button type="submit" class="modal-search-btn-close"><i class="fas fa-search"></i></button>
       </div>
       <div class="modal-search-radio-group">
          <span class="radio-group">
-         <input type="radio" id="searchFood" value="radioFood" name="modal-search-radio" checked>
+         <input type="radio" id="searchFood" name="typeSearch" value="food" name="modal-search-radio" checked>
          <label for="searchFood" style="color: #FFF">Món ăn</label>
          </span>
          <span class="radio-group">
-         <input type="radio" id="searchNew" value="searchNew" name="modal-search-radio">
+         <input type="radio" id="searchNew" name="typeSearch" value="new" name="modal-search-radio">
          <label for="searchNew" style="color: #FFF">Tin tức</label>
          </span>
       </div>

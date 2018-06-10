@@ -32,17 +32,17 @@ function call($controller, $action) {
 		    $controller = new MenuController();
 	            break;
                 case 'FoodDetail':
-                        require_once 'Model/FoodDetail.php';
+                        require_once 'Model/Food.php';
                         require_once 'Model/Comment.php';
                         $controller = new FoodDetailController();
 			break;
                 case 'FoodCategory':
-                        require_once 'Model/FoodCategory.php';
+                        require_once 'Model/Food.php';
                         $controller = new FoodCategoryController();
                         break;
                 case 'Comment':
                     require_once 'Model/Comment.php';
-                    require_once 'Model/FoodDetail.php';
+                    require_once 'Model/Food.php';
                     $controller = new CommentController();
                     break;
                 case 'GioHang':
@@ -55,7 +55,7 @@ function call($controller, $action) {
                         $controller = new MuaHangKhongTaiKhoanController();
                 case 'Comment':
 			require_once 'Model/Comment.php';
-			require_once 'Model/FoodDetail.php';
+			require_once 'Model/Food.php';
 			$controller = new CommentController();
 			break;
                 case 'ThongTinGiaoHang':
@@ -68,6 +68,13 @@ function call($controller, $action) {
                     require_once 'Model/OrderFood.php';
                     $controller = new ProfileHistoryController();
                     break;
+                case 'GioiThieu':
+                        $controller = new GioiThieuController();
+			break;
+                case 'ShowSearch':
+                        require_once 'Model/Food.php';
+                        $controller = new ShowSearchController();
+                        break;
     }
 
 	// call the action
@@ -91,7 +98,9 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'MuaHangKhongTaiKhoan' => ['show', 'error'],
                      'ThongTinGiaoHang' => ['show', 'error'],
                      'ThankYou' => ['show', 'error'],
-                     'ProfileHistory' =>['history']
+                     'ProfileHistory' =>['history'],
+                     'GioiThieu' => ['show', 'error'],
+                     'ShowSearch' => ['show', 'error'],
     );
 
 // check that the requested controller and action are both allowed
