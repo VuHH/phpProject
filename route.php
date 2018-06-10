@@ -33,6 +33,7 @@ function call($controller, $action) {
 	            break;
                 case 'FoodDetail':
                         require_once 'Model/FoodDetail.php';
+                        require_once 'Model/Comment.php';
                         $controller = new FoodDetailController();
 			break;
                 case 'FoodCategory':
@@ -49,8 +50,15 @@ function call($controller, $action) {
                 case 'DangNhapDatHang':
                         $controller = new DangNhapDatHangController();
 			break;
+<<<<<<< HEAD
                 case 'MuaHangKhongTaiKhoan':
                         $controller = new MuaHangKhongTaiKhoanController();
+=======
+                case 'Comment':
+			require_once 'Model/Comment.php';
+			require_once 'Model/FoodDetail.php';
+			$controller = new CommentController();
+>>>>>>> chi1
 			break;
                 case 'ThongTinGiaoHang':
                         $controller = new ThongTinGiaoHangController();
