@@ -17,6 +17,7 @@ function call($controller, $action) {
 			break;
                 case 'FoodDetail':
                         require_once 'Model/FoodDetail.php';
+                        require_once 'Model/Comment.php';
                         $controller = new FoodDetailController();
 			break;
                 case 'FoodCategory':
@@ -29,6 +30,7 @@ function call($controller, $action) {
 			break;
                 case 'Comment':
 			require_once 'Model/Comment.php';
+			require_once 'Model/FoodDetail.php';
 			$controller = new CommentController();
 			break;
                     

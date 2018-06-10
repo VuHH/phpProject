@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row contact">
     <div class="col-sm-6">
         <h2 class="food-contact-title">Fast Food</h2>
         <div class="row food-contact">

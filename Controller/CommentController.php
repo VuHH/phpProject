@@ -2,19 +2,17 @@
 
 class CommentController {
 	public function addComment() {
-            $customerID = $_POST['CustomerID'];
-            $foodID = $_POST['FoodID'];
+            $customerID = $_POST['customerID'];
+            $foodID = $_POST['foodID'];
             $txtComment = $_POST['txtComment'];
             
             $comment = Comment::addComment($customerID, $foodID, $txtComment);
-            echo $comment;
-            require_once 'View/pages/detail/detail.php';
+//            echo $comment;
 	}
         
         public function showComment() {
-            $result = tu duoi db;
-            $json = array(); 
-            echo ''
+//            $result = tu duoi db;
+            $json = array();
             
         }
 }
