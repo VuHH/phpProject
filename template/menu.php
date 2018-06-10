@@ -93,11 +93,11 @@ if (!isset($_SESSION))
       <div class="modal-search-radio-group">
          <span class="radio-group">
          <input type="radio" id="searchFood" value="radioFood" name="modal-search-radio" checked>
-         <label for="searchFood">Món ăn</label>
+         <label for="searchFood" style="color: #FFF">Món ăn</label>
          </span>
          <span class="radio-group">
          <input type="radio" id="searchNew" value="searchNew" name="modal-search-radio">
-         <label for="searchNew">Tin tức</label>
+         <label for="searchNew" style="color: #FFF">Tin tức</label>
          </span>
       </div>
    </form>
