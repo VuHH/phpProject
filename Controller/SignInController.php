@@ -10,6 +10,7 @@ class SignInController {
 	    //$lstUsers = User::showAll();
 	    require_once 'View/pages/signin/signin.php';
 	}
+        
 	public function loginAction() {
             if (!isset($_SESSION)) {
                 session_start();
@@ -17,14 +18,14 @@ class SignInController {
             $userName = NULL;
             $userPass = NULL;
             $customer = NULL;
-            $md5Pass = NULL;
+            //$md5Pass = NULL;
             $isValid = TRUE;
             //$userName= "vuho99";
             //$md5Pass = md5("456456");
             if (isset($_SESSION['errorLogin'])) {
                 unset($_SESSION['errorLogin']);
             }
-            echo 'Test';
+            //echo 'Test';
             if (isset($_POST["userName"])) {
                 $userName = $_POST["userName"];
             }
@@ -56,21 +57,16 @@ class SignInController {
             }
             //echo $isValid;
             if ($isValid == TRUE) {
+                //echo 'True';
                 $_SESSION["userName"] = $customer->getUsernameCustomer();
                 $_SESSION["fullName"] = $customer->getCustomerName();
                 $_SESSION["userEmail"] = $customer->getCustomerEmail();
                 $_SESSION["userAddress"] = $customer->getCustomerAddress();
                 $_SESSION["userPhone"] = $customer->getCustomerPhone();
                 $_SESSION["userID"] = $customer->getCustomerID();
+                
                 $username = $_SESSION["userName"];
-                //echo $username;
-                $myJSON = json_encode($username);
-                ob_clean();
-                require_once('View/pages/home/ViewHomePage.php');
-                echo '-***myJSONSignIn***-';
-                echo $myJSON;
-                die();
-                    
+                echo $username;
             } else {
                 require_once 'View/pages/signin/signin.php';
             }
@@ -88,14 +84,15 @@ class SignInController {
                 unset($_SESSION['userPhone']);
                 unset($_SESSION['userID']);
             }
-            
             $isValid = 1;
-            $myJSON = json_encode($isValid);
-            ob_clean();
-                //require_once('View/pages/home/ViewHomePage.php');
-            echo '-***myJSONLogout***-';
-            echo $myJSON;
-            die();
+            echo $isValid;
+//            
+//            $myJSON = json_encode($isValid);
+//            ob_clean();
+//                //require_once('View/pages/home/ViewHomePage.php');
+//            echo '-***myJSONLogout***-';
+//            echo $myJSON;
+//            die();
             //header('Location: index.php?controller=HomePage&action=home');
             //require_once('View/pages/home/ViewHomePage.php');
         }

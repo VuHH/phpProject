@@ -94,7 +94,7 @@ public static function getCustomer($userName,$conn) {
     //echo $userName;
     //echo $userPass;
     $sql = "SELECT * FROM customer WHERE UsernameCustomer = '" .$userName. "'";
-    echo $sql;
+    //echo $sql;
     $customer = NULL;
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {

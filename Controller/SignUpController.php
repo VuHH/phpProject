@@ -13,10 +13,10 @@ class SignUpController {
 //            $email = "TEst";
 //            $fullname = "test";
             
-            echo $username;
-            echo $pwd;
-            echo $email;
-            echo $fullname;
+//            echo $username;
+//            echo $pwd;
+//            echo $email;
+//            echo $fullname;
             //1 - Customer is exist
             //2- Update fail
             $isSuccess = Customer::addCustomer($username, $pwd, $email, $fullname);

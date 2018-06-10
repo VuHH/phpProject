@@ -19,18 +19,6 @@ if (!isset($_SESSION))
       </div>
       <div class="navbar-header menu-login" id="loginMenu">
         <div id="notLogin">
-<!--        <div class="row">
-        <div class="col-sm-6">
-                <button class="btn btn-primary" style="width: 100%; margin: 0" 
-                        data-toggle="modal" data-target="#registerModal">Đăng ký</button>
-	</div>
-        <div class="col-sm-6">
-            <a href="?controller=SignIn&action=show">
-                <button class="btn btn-success" id="signInbtn" style="width: 100%; margin: 0" 
-                        onclick="SignIn()">Đăng nhập</button>
-            </a>
-        </div>
-        </div>-->
         <?php
             ob_start(); 
             if (isset($_SESSION['userName']))
@@ -178,7 +166,7 @@ if (!isset($_SESSION))
          </div>
          <div class="modal-footer">
              <div class="row">
-                 <button type="submit" class="btn btn-success" onclick="validateForm()">Đăng ký</button>
+                 <button type="submit" class="btn btn-success" onclick="validateForm()" data-dismiss="modal">Đăng ký</button>
             <button type="button" class="btn btn-warning" 
                     data-dismiss="modal" style="margin-bottom: 10px;" onclick="resetForm()">Đóng</button>
              </div>

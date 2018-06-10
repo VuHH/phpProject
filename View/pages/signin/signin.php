@@ -27,7 +27,7 @@ if (!isset($_SESSION))
         echo '<span><b style="color: red">'.$_SESSION['errorLogin'].'</b></span>';
     }
 ?>
-  <form action="" method="post" id="formSignIn">
+  <form id="formSignIn">
     <div class="form-group">
       <label for="email">Tên đăng nhập:</label>
       <input type="text" class="form-control" id="userName" placeholder="Nhập tên đăng nhập" name="userName">
@@ -43,26 +43,9 @@ if (!isset($_SESSION))
 function signInController() {
     $.ajax({
       type: 'post',
-      url: '?controller=SignIn&action=loginAction',
+      url: 'index.php?controller=SignIn&action=loginAction',
       data: $('#formSignIn').serialize(),
       success: function (data) {
-        let myArr = data.split("-***myJSONSignIn***-");
-        let myJson = JSON.parse(myArr[1]);
-        var output = "";
-        if (myJson != null) {
-            output += '<div class="row">' +
-                '<div class="col-sm-12 text-center">' +
-                '<a href="?controller=Profile&action=show">' +
-                '<i class="fas fa-user" id="userAvatar">&nbsp' + myJson + '&nbsp</i>'+
-                '</a>'+
-                '<a title="Dang Xuat" href="" onclick="logout()"><i class="fas fa-power-off" style="font-size:15px">&nbsp;</i></a>'+
-                '</div>'+
-                '</div>'
-        }
-        $('#notLogin').hide();
-        $('#loginMenu').html(output);
-        $('#userAvatar').css("font-size", "28px");
-        $('#userAvatar').css("color", "#FFF");
         window.location.href = "index.php?controller=HomePage&action=home";
       }
     });
