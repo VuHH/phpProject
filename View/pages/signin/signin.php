@@ -46,8 +46,22 @@ function signInController() {
       url: 'index.php?controller=SignIn&action=loginAction',
       data: $('#formSignIn').serialize(),
       success: function (data) {
-        window.location.href = "index.php?controller=HomePage&action=home";
-      }
+        //console.log(data);
+        let myArr = data.split("-***myJSONSignIn***-");
+        let myJson = JSON.parse(myArr[1]);
+        if (myJson == 0) {
+            window.location.href = "index.php?controller=HomePage&action=home";
+        } else {
+            if (myJson == 1) {
+                showInfoMessage("Tài khoản của bạn không tồn tại. Vui lòng đăng ký");
+            } else if (myJson == 2) {
+                showInfoMessage("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ admin.");
+            } else {
+                showInfoMessage("Mật khẩu của bạn không đúng.");
+            }
+            window.location.href = "index.php?controller=SignIn&action=show";
+        }     
+      },
     });
 }
 </script>

@@ -18,13 +18,11 @@ class SignInController {
             $userName = NULL;
             $userPass = NULL;
             $customer = NULL;
+            $error = 0;
             //$md5Pass = NULL;
             $isValid = TRUE;
             //$userName= "vuho99";
             //$md5Pass = md5("456456");
-            if (isset($_SESSION['errorLogin'])) {
-                unset($_SESSION['errorLogin']);
-            }
             //echo 'Test';
             if (isset($_POST["userName"])) {
                 $userName = $_POST["userName"];
@@ -40,17 +38,17 @@ class SignInController {
             }
             //print_r($customer);
             if ($customer == NULL) {
-                $_SESSION['errorLogin'] = "Tài khoản của bạn không tồn tại. Vui lòng đăng ký";
+                $error = 1;
                 $isValid = FALSE;
             } else {
                 $isDisable = $customer->getIsDisable();
                 $passCust = $customer->getCustomerPassword();
                 if ($isDisable != 1) {
-                    $_SESSION['errorLogin'] = "Tài khoản của bạn đã bị khóa. Vui lòng liên hệ admin.";
+                    $error = 2;
                     $isValid = FALSE;
                 } else {
                     if ($md5Pass != $passCust) {
-                        $_SESSION['errorLogin'] = "Mật khẩu của bạn không đúng.";
+                        $error = 3;
                         $isValid = FALSE;
                     }
                 }
@@ -65,10 +63,20 @@ class SignInController {
                 $_SESSION["userPhone"] = $customer->getCustomerPhone();
                 $_SESSION["userID"] = $customer->getCustomerID();
                 
-                $username = $_SESSION["userName"];
-                echo $username;
+                //$username = $_SESSION["userName"];
+                //echo $isValid;
+                $myJSON = json_encode($error);
+                ob_clean();
+                echo '-***myJSONSignIn***-';
+                echo $myJSON;
+                die();
             } else {
-                require_once 'View/pages/signin/signin.php';
+                //echo $isValid;
+                $myJSON = json_encode($error);
+                ob_clean();
+                echo '-***myJSONSignIn***-';
+                echo $myJSON;
+                die();   
             }
 	}
         public function logoutAction() {
