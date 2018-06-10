@@ -17,9 +17,7 @@ class FoodDetail {
     }
 
     
-    public static function show($foodID) {
-            include 'Model/connectDB.php';
-            $conn = connectDB();
+    public static function show($foodID,$conn) {
             $lstFood;
             $sql = "SELECT * FROM food WHERE FoodID IN ('".$foodID."')";
             $result = $conn->query($sql);
@@ -34,19 +32,12 @@ class FoodDetail {
                                 $row["FoodID"], $row["FoodName"], $row["FoodDescribe"], 
                                 $row["DirImage"], $row["Price"], $rowType["TypeName"]);
                     }
-                }
-                
-                        
-                        
-                        
+                }    
                 }
             } else {
                     echo "0 results";
             }
-            
-           
-
-            $conn->close();
+//            $conn->close();
             return $lstFood;
 	}
 }

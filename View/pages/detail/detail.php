@@ -29,25 +29,57 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="clearfix">
-            <div class="row comment">
-                <div class="col-sm-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img class="img-thumbnail img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>my username</strong> <span class="text-muted">commented 5 days ago</span>
-                                </div>
-                                <div class="card-body">
-                                    Panel content
+            <?php
+            foreach ($lstComment as $comment) {
+                echo 
+                '<div class="row comment">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img class="img-thumbnail img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="card">
+                                    <div class="card-header">';
+                                    echo '<strong>'.$comment['CustomerName'].'</strong> <span class="text-muted">commented '.$comment['CommentDate'].'</span>';
+                               echo'</div>
+                                    <div class="card-body">
+                                        '.$comment['CommentContent'].'
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>';
+                               
+                
+                    if($comment['AnwserComment'] != NULL) {
+                        
+                        echo 
+                        '<div class="row comment">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img class="img-thumbnail img-responsive user-photo" src="./images/home/logo.png">
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="card">
+                                            <div class="card-header" style="background: #9bcf5a">';
+                                            echo '<strong>Admin</strong> <span class="text-muted">reply '.$comment['AnwserDate'].'</span>';
+                                       echo'</div>
+                                            <div class="card-body">
+                                                '.$comment['AnwserComment'].'
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                        
+                    }               
+                }
+            ?>
             
             <!--Enter comment-->
             
@@ -55,16 +87,16 @@
                 <div class="col-sm-6">
                     <div class="reply-comment">
                         <p class="title-reply-comment">Enter a comment</p>
-                        <form class="form-reply" method="post" action="?controller=Comment&action=addComment" id="form-reply-comment" name="form-reply-comment">
-                            <?php
-                                echo '<input type="hidden" name="CustomerID" value="1"/>';
-                                echo '<input type="hidden" name="FoodID" value="'.$lstFood->id.'"/>';
-                            ?>
-                            <textarea placeholder="Enter your comment here..." name="txtComment" id="txtComment" class="input-comment" required></textarea>
-                            <button type="submit" name="btnSubmitComment" id="btnSubmitComment" class="submit-comment btn btn-primary">
+                        <?php
+                        echo '<form class="form-reply" method="post" action="" id="formReplyComment" name="form-reply-comment">';
+                        echo '<input type="hidden" name="customerID" value="1"/>';
+                        echo '<input type="hidden" name="foodID" value="'.$lstFood->id.'"/>';
+                        echo '<textarea placeholder="Enter your comment here..." name="txtComment" id="txtComment" class="input-comment" required></textarea>
+                             <button type="submit" name="btnSubmitComment" id="btnSubmitComment" class="submit-comment btn btn-primary">
                                 post comment
-                            </button>
-                        </form>
+                             </button>
+                             </form>';
+                        ?>
                     </div>
                 </div>
             </div>
@@ -72,3 +104,5 @@
         </div>
     </div>
 </div>
+
+<script src="./././lib/js/appComment.js"></script>
