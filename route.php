@@ -24,7 +24,7 @@ function call($controller, $action) {
                     $controller = new SignUpController();
 	            break;
                 case 'Profile':
-                    //require_once 'Model/Customer.php';
+                    require_once 'Model/Customer.php';
                     $controller = new ProfileController();
 	            break;
                 case 'Menu':
@@ -58,6 +58,10 @@ function call($controller, $action) {
                 case 'ThankYou':
                         $controller = new ThankYouController();
 			break;
+                case 'ProfileHistory':
+                    require_once 'Model/OrderFood.php';
+                    $controller = new ProfileHistoryController();
+                    break;
     }
 
 	// call the action
@@ -71,7 +75,7 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'Contact' => ['show', 'error'],
                      'SignIn' => ['show', 'loginAction', 'logoutAction', 'error'],
                      'SignUp' => ['add'],
-                     'Profile' => ['show'],
+                     'Profile' => ['show', 'updateProfie', 'changePass'],
                      'Menu' => ['show', 'error'],
                      'FoodDetail' => ['show', 'error'],
                      'FoodCategory' => ['show', 'error'],
@@ -80,7 +84,8 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'DangNhapDatHang' => ['signin', 'error'],
                      'MuaHangKhongTaiKhoan' => ['show', 'error'],
                      'ThongTinGiaoHang' => ['show', 'error'],
-                     'ThankYou' => ['show', 'error']
+                     'ThankYou' => ['show', 'error'],
+                     'ProfileHistory' =>['history']
     );
 
 // check that the requested controller and action are both allowed

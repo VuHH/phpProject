@@ -57,6 +57,7 @@ class SignInController {
                 $_SESSION["userEmail"] = $customer->getCustomerEmail();
                 $_SESSION["userAddress"] = $customer->getCustomerAddress();
                 $_SESSION["userPhone"] = $customer->getCustomerPhone();
+                $_SESSION["userID"] = $customer->getCustomerID();
                 header('Location: index.php');
             } else {
                 require_once 'View/pages/signin/signin.php';
@@ -73,6 +74,7 @@ class SignInController {
                 unset($_SESSION['userEmail']);
                 unset($_SESSION['userAddress']);
                 unset($_SESSION['userPhone']);
+                unset($_SESSION['userID']);
             }
 
             header('Location: index.php');

@@ -3,7 +3,7 @@ class MenuController {
     
 	public function show() {
             $result = Menu::show();
-            print_r($result);
+            //print_r($result);
             $myJSON = json_encode($result);
             ob_clean();
             echo '-***myJSONFastFood***-';

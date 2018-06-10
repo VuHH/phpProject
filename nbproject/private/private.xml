@@ -17,6 +17,7 @@
             <file>file:/C:/wamp64/www/phpProject/Model/FoodCategory.php</file>
             <file>file:/C:/wamp64/www/phpProject/index.php</file>
             <file>file:/C:/wamp64/www/phpProject/template/menu.php</file>
+            <file>file:/C:/wamp64/www/phpProject/lib/css/myStyle.css</file>
             <file>file:/C:/wamp64/www/phpProject/Controller/ProfileController.php</file>
             <file>file:/C:/wamp64/www/phpProject/lib/js/showMessage.js</file>
             <file>file:/C:/wamp64/www/phpProject/View/pages/profile/history.php</file>
@@ -31,6 +32,7 @@
             <file>file:/C:/wamp64/www/phpProject/Controller/CommentController.php</file>
             <file>file:/C:/wamp64/www/phpProject/Model/FoodDetail.php</file>
             <file>file:/C:/wamp64/www/phpProject/Model/Comment.php</file>
+            <file>file:/C:/wamp64/www/phpProject/Controller/DangNhapDatHangController.php</file>
             <file>file:/C:/wamp64/www/phpProject/Model/User.php</file>
             <file>file:/C:/wamp64/www/phpProject/Controller/SignInController.php</file>
             <file>file:/C:/wamp64/www/phpProject/template/header.php</file>

@@ -3,10 +3,10 @@
 class SignUpController {
     	public function add() {
             // link test: ?controller=SignUp&action=add
-            $username = $_POST["username"];
-            $pwd = $_POST["pwd"];
-            $email = $_POST["email"];
-            $fullname = $_POST["fullname"];
+            $username = $_POST["usernameRegister"];
+            $pwd = $_POST["passRegister"];
+            $email = $_POST["emailRegister"];
+            $fullname = $_POST["fullnameRegister"];
             
 //            $username = "test";
 //            $pwd = "test";

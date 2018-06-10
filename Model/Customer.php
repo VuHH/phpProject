@@ -136,6 +136,41 @@ public static function addCustomer($userName, $userPass, $userEmail, $userFullNa
     $conn->close();
     
 }
+
+public static function updateCustomer($userID,$fullnameProfile, 
+                    $emailProfile, $addressProfile, $phoneProfile) {
+    
+    include 'Model/connectDB.php';
+    $conn = connectDB();
+    
+    $sql = "UPDATE customer set CustomerName = '".$fullnameProfile."', "
+            . "CustomerEmail ='".$emailProfile."' , CustomerAddress = '".$addressProfile."', "
+            . "CustomerPhone = '".$phoneProfile."' WHERE CustomerID = '".$userID."'";
+    
+    //echo $sql;
+    
+    if ($conn->query($sql) === TRUE) {
+        return 1;
+    } else {
+        return 0;
+    }
+    
+}
+
+public static function updatePass($userID,$userPass) {
+    include 'Model/connectDB.php';
+    $conn = connectDB();
+    
+    $sql = "UPDATE customer set CustomerPassword='".$userPass."' "
+            . "WHERE CustomerID = '".$userID."'";
+    
+    if ($conn->query($sql) === TRUE) {
+        return 1;
+    } else {
+        return 0;
+    }
+    
+}
     
 }
 

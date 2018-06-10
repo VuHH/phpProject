@@ -116,8 +116,8 @@ if (!isset($_SESSION))
                   <label class="control-label col-sm-2" >Tên đăng nhập:</label>
                   <div class="col-sm-10" data-tip="Tên đang nhập từ 6-20 ký tụ. Không chứa ký tự đặc biệt">
                       <input type="text" class="form-control" 
-                             id="username" placeholder="Nhập tên đăng nhập" 
-                             name="username">
+                             id="usernameRegister" placeholder="Nhập tên đăng nhập" 
+                             name="usernameRegister">
                   </div>
                </div>
                <div class="form-group">
@@ -126,8 +126,8 @@ if (!isset($_SESSION))
                          for="pwd">Mật khẩu:</label>
                   <div class="col-sm-10" data-tip="Mật khẩu từ 6-20 ký tụ">          
                      <input type="password" class="form-control" 
-                            id="pwd" placeholder="Nhập mật khẩu" 
-                            name="pwd" required>
+                            id="passRegister" placeholder="Nhập mật khẩu" 
+                            name="passRegister" required>
                   </div>
                </div>
                <div class="form-group">
@@ -135,16 +135,16 @@ if (!isset($_SESSION))
                   <label class="control-label col-sm-2" for="pwd">Xác nhận mật khẩu:</label>
                   <div class="col-sm-10">          
                      <input type="password" class="form-control" 
-                            id="repwd" placeholder="Nhập lại mật khẩu" 
-                            name="pwd" required>
+                            id="rePassRegister" placeholder="Nhập lại mật khẩu" 
+                            name="rePassRegister" required>
                   </div>
                </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" >Họ và Tên:</label>
                   <div class="col-sm-10" >
                       <input type="text" class="form-control" 
-                             id="fullname" placeholder="Nhập Họ và Tên" 
-                             name="fullname">
+                             id="fullnameRegister" placeholder="Nhập Họ và Tên" 
+                             name="fullnameRegister">
                   </div>
                </div>
                <div class="form-group">
@@ -152,8 +152,8 @@ if (!isset($_SESSION))
                   <label class="control-label col-sm-2" for="email">Email:</label>
                   <div class="col-sm-10">          
                      <input type="email" class="form-control" 
-                            id="email" placeholder="Nhập Email" 
-                            name="email" required>
+                            id="emailRegister" placeholder="Nhập Email" 
+                            name="emailRegister" required>
                   </div>
                </div>
                <div class="form-group">

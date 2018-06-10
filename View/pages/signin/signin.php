@@ -4,7 +4,22 @@ if (!isset($_SESSION))
     session_start();
 }
 ?>
-<h2>Sign In</h2>
+<head>
+    <style>
+        #signIn {
+            margin-left: 20px;
+            margin-top: 80px;
+        }
+        #userName {
+            width: 50%;
+        }
+        #userPass {
+            width: 50%;
+        }
+    </style>
+</head>
+<div id="signIn">
+<h2 style="color: #9BCE5B">Sign In</h2>
 <p>Please fill in this form to create an account.</p>
 <?php
     if (isset($_SESSION['errorLogin']))
@@ -21,8 +36,9 @@ if (!isset($_SESSION))
       <label for="pwd">Mật khẩu:</label>
       <input type="password" class="form-control" id="userPass" placeholder="Nhập mật khẩu" name="userPass">
     </div>
-    <div class="checkbox">
+<!--    <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    </div>-->
+    <button type="submit" class="btn btn-warning">Submit</button>
   </form>
+</div>

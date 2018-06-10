@@ -29,5 +29,9 @@
              </div>
          </div>
      </div>
+<!--   <footer class="footer" style="margin-top: 50px;">
+         <?php include ("template/footer.php");?>
+   </footer>-->
    </body>
+
 </html>

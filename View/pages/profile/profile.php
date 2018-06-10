@@ -75,7 +75,7 @@ body {font-family: Arial;}
 <div class="tab">
   <button class="tablinks" onclick="openTap(event, 'Profile')" id="defaultOpen">Thông tin khách hàng</button>
   <button class="tablinks" onclick="openTap(event, 'ChPass')">Đổi mật khẩu</button>
-  <button class="tablinks" onclick="openTap(event, 'History')">Lịch sử giao dịch</button>
+  <button class="tablinks" onclick="openTapLoadData(event, 'History')">Lịch sử giao dịch</button>
   <button class="tablinks" onclick="openTap(event, 'Feedback')">Feedback</button>
 </div>
 
@@ -86,7 +86,9 @@ body {font-family: Arial;}
 <?php require_once 'changepass.php';?>
 </div>
 <div id="History" class="tabcontent">
-<?php require_once 'history.php';?>
+<?php 
+    require_once 'history.php';
+?>
 </div>
 <div id="Feedback" class="tabcontent">
 <?php require_once 'feedback.php';?>
@@ -110,4 +112,59 @@ function openTap(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+function openTapLoadData(evt, cityName) {
+    var currentTarget = evt.currentTarget;
+     $.ajax({
+          type: 'post',
+          url: '?controller=ProfileHistory&action=history',
+          data: $('#historyForm').serialize(),
+          success: function (data) {
+            let myArr = data.split("-***myJSONHistory***-");
+            let myJson = JSON.parse(myArr[1]);
+            var output = "";
+            for (var i = 0; i < myJson.length; i++) {
+                var total = parseInt(myJson[i].price) * parseInt(myJson[i].quantity);
+                var orderDate = patternDate(myJson[i].orderDate);
+
+                
+                output += "<tr>" + 
+                        "<td>"+orderDate +"</td>"+ 
+                        "<td>"+myJson[i].foodName +"</td>" +
+                        "<td>"+ total+"</td>" +
+                        "</tr>";
+            }
+            
+            
+            var i, tabcontent, tablinks;
+            tabcontent = $(".tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                $(tabcontent[i]).css("display", "none");
+            }
+            tablinks = $(".tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            $("#" + cityName).css("display", "block");
+            currentTarget.className += " active";
+            
+            $('#showHistory').html(output);
+            
+          }
+        });
+       
+
+       
+};
+function patternDate(stringDate) {
+var dateConvert = new Date(stringDate);
+var day = dateConvert.getDay().toString();
+var month = dateConvert.getMonth().toString();
+var year = dateConvert.getFullYear().toString();
+var concatDay = day.concat("/");
+var concatMoth = month.concat("/");
+var concatYear = concatMoth.concat(year);
+var convertDate = concatDay.concat(concatYear);
+return convertDate;
+}
 </script>

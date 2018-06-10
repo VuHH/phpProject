@@ -1,61 +1,33 @@
 <!-- Top Section -->
-<section id="top-section" class="parallax-style" style="background-position: 50% -318px;">
-   <div class="top-section overlay-normal">
-      <div id="top-carousel" class="carousel slide top-carousel-container" data-ride="carousel">
-         <ol class="carousel-indicators">
-            <li data-target="#top-carousel" data-slide-to="0"></li>
-            <li data-target="#top-carousel" data-slide-to="1" class="active"></li>
-            <li data-target="#top-carousel" data-slide-to="2"></li>
-         </ol>
-         <!-- /.carousel-indicators -->
-         <div class="carousel-inner">
-            <div class="item">
-               <h3 class="top-heading-1"> Embrace With </h3>
-               <h3 class="top-heading-2"> Foody Love  </h3>
-               <h3 class="top-heading-3"> The perfect place for food lover. </h3>
-               <div class="btn-container">
-                  <a href="#index.html#" class="btn btn-sm btn-light-green">Learn More</a>
-               </div>
-               <!-- /.btn-container -->
-            </div>
-            <!-- /.item -->
-            <div class="item active">
-               <h3 class="top-heading-1"> Cheer up With</h3>
-               <h3 class="top-heading-2"> Real Time Test </h3>
-               <h3 class="top-heading-3"> The perfect Test for food lover. </h3>
-               <div class="btn-container">
-                  <a href="#index.html#" class="btn btn-sm btn-light-green">Learn More</a>
-               </div>
-               <!-- /.btn-container -->
-            </div>
-            <!-- /.item -->
-            <div class="item">
-               <h3 class="top-heading-1">Enjoy With </h3>
-               <h3 class="top-heading-2"> Friend &amp; Family </h3>
-               <h3 class="top-heading-3"> The perfect place for Enjoyment.</h3>
-               <div class="btn-container">
-                  <a href="#index.html#" class="btn btn-sm btn-light-green">Learn More</a>
-               </div>
-               <!-- /.btn-container -->
-            </div>
-            <!-- /.item -->
-         </div>
-         <!-- /.carousel-inner -->
-         <a class="slide-nav left" href="#index.html#top-carousel" data-slide="prev">
-         <span class="nav-icon"><i class="fa fa-chevron-left"></i></span>
-         </a><!-- /.slide-nav.left -->
-         <a class="slide-nav right" href="#index.html#top-carousel" data-slide="next">
-         <span class="nav-icon"><i class="fa fa-chevron-right"></i></span>
-         </a><!-- /.slide-nav.right -->
+<section id="top-section" class="parallax-style">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="./images/home/slide1.jpg" alt="" style="width:100%;">
       </div>
-      <!-- /#top-carousel /.top-carousel-container -->
-      <div id="next-section" class="next-section">
-         <span class="go-to-next">
-         <i class="fa fa-angle-double-down"></i>
-         </span>
+
+      <div class="item">
+        <img src="./images/home/slide2.jpg" alt="" style="width:100%;">
       </div>
-      <!-- /.next-section -->
-   </div>
+    
+      <div class="item">
+        <img src="./images/home/slide3.jpg" alt="" style="width:100%;">
+      </div>
+      <div class="item">
+        <img src="./images/home/slide4.jpg" alt="" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+  </div>
    <!-- /.top-section -->
 </section>
 <!-- /#top-section -->
