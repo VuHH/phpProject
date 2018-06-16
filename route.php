@@ -73,7 +73,20 @@ function call($controller, $action) {
 			break;
                 case 'ShowSearch':
                         require_once 'Model/Food.php';
+                        require_once 'Model/News.php';
                         $controller = new ShowSearchController();
+                        break;
+                 case 'NewsDetail':
+                        require_once 'Model/News.php';
+                        $controller = new NewsDetailController();
+                        break;
+                case 'ShowNews':
+                        require_once 'Model/News.php';
+                        $controller = new ShowNewsController();
+                        break;
+                case 'Feedback':
+                    require_once 'Model/Feedback.php';
+                        $controller = new FeedbackController();
                         break;
     }
 
@@ -101,6 +114,9 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'ProfileHistory' =>['history'],
                      'GioiThieu' => ['show', 'error'],
                      'ShowSearch' => ['show', 'error'],
+                     'NewsDetail' => ['show', 'error'],
+                     'ShowNews' => ['show', 'error'],
+                     'Feedback' => ['add','showadd','show', 'error'],
     );
 
 // check that the requested controller and action are both allowed

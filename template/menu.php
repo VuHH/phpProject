@@ -73,7 +73,7 @@ if (!isset($_SESSION))
                <a href="#">Thực đơn</a>
                <span class="toggle_nav_button"></span>
             </li>
-            <li><a href="#">Tin tức</a></li>
+            <li><a href="?controller=ShowNews&action=show">Tin tức</a></li>
             <li><a href="?controller=Contact&action=show">Liên hệ</a></li>
             <li><a href="?controller=GioiThieu&action=show">Giới Thiệu</a></li>
          </ul>

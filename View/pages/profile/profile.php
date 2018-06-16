@@ -76,7 +76,7 @@ body {font-family: Arial;}
   <button class="tablinks" onclick="openTap(event, 'Profile')" id="defaultOpen">Thông tin khách hàng</button>
   <button class="tablinks" onclick="openTap(event, 'ChPass')">Đổi mật khẩu</button>
   <button class="tablinks" onclick="openTapLoadData(event, 'History')">Lịch sử giao dịch</button>
-  <button class="tablinks" onclick="openTap(event, 'Feedback')">Feedback</button>
+  <button class="tablinks" onclick="openTapLoadFeedback(event, 'Feedback')">Feedback</button>
 </div>
 
 <div id="Profile" class="tabcontent">
@@ -149,6 +149,50 @@ function openTapLoadData(evt, cityName) {
             currentTarget.className += " active";
             
             $('#showHistory').html(output);
+            
+          }
+        });
+       
+
+       
+};
+function openTapLoadFeedback(evt, cityName) {
+    var currentTarget = evt.currentTarget;
+     $.ajax({
+          type: 'post',
+          url: '?controller=Feedback&action=show',
+          data: $('#feedbackForm').serialize(),
+          success: function (data) {
+            let myArr = data.split("-***myJSONFeedback***-");
+            let myJson = JSON.parse(myArr[1]);
+            var output = "";
+            for (var i = 0; i < myJson.length; i++) {
+                output += "<tr>" +
+                            "<td class='text-center'>"+ myJson[i].feedbackDate+"</td>"+
+                            "<td class='text-center'>"+ myJson[i].feedbackContent+"</td>"+
+                            "<td class='text-center'>"+ myJson[i].answerFeedback+"</td>"+
+                            "</tr>";
+//                output += "<tr>" + 
+//                        "<td>"+orde1rDate +"</td>"+ 
+//                        "<td>"+myJson[i].foodName +"</td>" +
+//                        "<td>"+ total+"</td>" +
+//                        "</tr>";
+            }
+            
+            
+            var i, tabcontent, tablinks;
+            tabcontent = $(".tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                $(tabcontent[i]).css("display", "none");
+            }
+            tablinks = $(".tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            $("#" + cityName).css("display", "block");
+            currentTarget.className += " active";
+            
+            $('#feedbackList').html(output);
             
           }
         });

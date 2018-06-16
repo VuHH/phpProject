@@ -1,4 +1,5 @@
 <?php
+if ($titleSearch == "Thức Ăn") {
     $num = count($lstFood);
     echo '<div class="row">';
 
@@ -37,9 +38,48 @@
             echo '<h2 class="text-center"> Không tìm thấy từ khóa "<b>'.$search.'</b>"</h2>' ;
             echo '</div>';
         }
+}
             
             //show tin tuc
-//            else {
+           else {
+               
+               $num = count($lstNews);
+    echo '<div class="row">';
+
+    echo '<div class="col-sm-12">';
+    echo '<h2 style="color:#9BCE5B" class="text-center category-title">'
+    . 'Danh sách tìm kiếm '.$titleSearch.'</h2>';
+    if ($num > 0) {
+        echo '<div class="row" style="margin: 5px 0px 10px 5px">';
+        echo '<h4 class="text-center" style="color:#FCB322">'.$num.' '
+            . 'kết quả trả về với từ khóa  <b>'.$search.'</b></h4>';
+        echo '</div>';
+        echo '<div class="row food-review">';
+            foreach ($lstNews as $news) {
+                 echo '<form action="?controller=NewsDetail&action=show" method="post" class="category-form">';
+                echo '<div class="col-sm-6">';
+                echo '<div class="card myCategory">';
+                echo '<button type="submit"><img class="card-img-top" src="'.$news->image.'" alt="'.$news->des.'"></button>';
+                echo '<div class="card-body category-line">';
+                echo '<button type="submit"><h6 class="card-title text-uppercase">',$news->title,'</h6></button>';
+                echo '<button type="submit" class="btn btn-info pull-right ">Xem Thêm</button>';
+                echo '    </div></div></div>';
+                echo '<input type="hidden" name="newsID" value="'.$news->id.'" >';
+                echo '</form>';
+            }
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        }
+        else {
+            echo '<div class="row" style="margin: 5px 0px 10px 5px">';
+            echo '<h2 class="text-center"> Không tìm thấy từ khóa "<b>'.$search.'</b>"</h2>' ;
+            echo '</div>';
+        }
+               
+               
+               
+           }
 //                
 //                $query = "SELECT * FROM news WHERE NewsName like '%$search%'";
 //                $img='';
