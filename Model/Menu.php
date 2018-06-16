@@ -28,7 +28,8 @@ class Menu {
                                     "id"=>$row["TypeID"],
                                     "name"=> utf8_encode($row["TypeName"]),
                                     "image"=>$row["DirImage"],
-                                    "des"=>utf8_encode($row["TypeDescribe"]));
+                                    "des"=>utf8_encode($row["TypeDescribe"]),
+                                    "isView"=>$row["IsView"]);
                                 array_push($lstMenu, $item);
 			}
 		} else {

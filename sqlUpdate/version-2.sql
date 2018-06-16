@@ -9,3 +9,5 @@ MODIFY COLUMN AdminPass Varchar(32);
 
 ALTER TABLE feedback
 ADD CONSTRAINT PK_Feedback PRIMARY KEY (FeedbackID);
+
+ALTER TABLE type add IsView boolean
