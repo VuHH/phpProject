@@ -18,7 +18,7 @@ if (!isset($_SESSION))
          </a>
       </div>
       <div class="navbar-header menu-login" id="loginMenu">
-        <div id="notLogin">
+        <!--<div id="notLogin">-->
         <?php
             ob_start(); 
             if (isset($_SESSION['userName']))
@@ -49,15 +49,21 @@ if (!isset($_SESSION))
                 echo '</div>';
             }
             ?>
-          </div>
+        <?php
+            if (isset($_SESSION["numberCart"])) {
+                echo '<input type="hidden" id="numberCartInput" value='.$_SESSION["numberCart"].'>';   
+            }
+            ?>
+<!--          </div>-->
       </div>
       <div class="navbar-header menu-cart">
          <div class="row">
             <div class="col-sm-12">
                <div class="btn-cart">
                   <p>
-                     <a href=" ?controller=GioHang&action=show">
-                         <span class="fas fa-shopping-cart">0 Giỏ hàng</span></a>
+                     <a href="?controller=GioHang&action=show">
+                         <span class="fas fa-shopping-cart"><span id="numberCart"></span>Giỏ hàng
+                     </a>
                   </p>
                </div>
                <div class="btn-search">
@@ -179,3 +185,14 @@ if (!isset($_SESSION))
 <script src="./lib/js/appMenu.js" type="text/javascript"></script>
 <script src="./lib/js/appSignIn.js" type="text/javascript"></script>
 <script src="./lib/js/appLogOut.js" type="text/javascript"></script>
+<script>
+$( document ).ready(function() {
+    var numberCart = $("#numberCartInput").val();
+    if (numberCart != 0) {
+        var text = " " +numberCart+" ";
+        $("#numberCart").text(text);
+    } else {
+        $("#numberCart").text(" 0 ");
+    }
+});
+</script>

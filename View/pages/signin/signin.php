@@ -22,11 +22,11 @@ if (!isset($_SESSION))
 <h2 style="color: #9BCE5B">Sign In</h2>
 <p>Please fill in this form to create an account.</p>
 <?php
-    if (isset($_SESSION['errorLogin']))
-    {
-        echo '<span><b style="color: red">'.$_SESSION['errorLogin'].'</b></span>';
-    }
-?>
+//    if (isset($_SESSION['errorLogin']))
+//    {
+//        echo '<span><b style="color: red">'.$_SESSION['errorLogin'].'</b></span>';
+//    }
+//?>
   <form id="formSignIn">
     <div class="form-group">
       <label for="email">Tên đăng nhập:</label>

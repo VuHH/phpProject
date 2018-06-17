@@ -1,21 +1,7 @@
 <?php
-// IDEA:
-
-require_once("./Controller/Login.php");
-?>
-<?php
+//
 if (isset($_GET["username"])) {
     $us = $_GET["username"];
-}
-?>
-
-<?php
-if (isset($_GET["sl"])) {
-    $sol = $_GET["sl"];
-    $tt = $sol * 100000;
-} else {
-    $sol = 1;
-    $tt = $sol * 100000;
 }
 ?>
 
@@ -37,39 +23,38 @@ if (isset($_GET["sl"])) {
                         <div class="row">
                             <div class="col-md-5">
                                 <?php
-                                $prodd = Customer::get_user($us);
-                                foreach ($prodd as $item) {
-
-
-                                    # code...
-                                    ?>
-
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <td>Người Nhận</td>
-                                                <td><input type="text" value="<?php echo $item["CustomerName"] ?>"></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Địa Chỉ</td>
-                                                <td><input type="text" value="<?php echo $item["CustomerAddress"] ?>"></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Điện Thoại</td>
-                                                <td><input type="text" value="<?php echo $item["CustomerPhone"] ?>"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Email</td>
-                                                <td><input type="email" value="<?php echo $item["CustomerEmail"] ?>"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <?php
-                                }
+//                                $prodd = Customer::get_user($us);
+//                                foreach ($prodd as $item) {
+//
+//
+//                                    # code...
+//                                    
                                 ?>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Người Nhận</td>
+                                            <td><input type="text" value="<?php echo $_SESSION["fullName"] ?>"></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Địa Chỉ</td>
+                                            <td><input type="text" value="<?php echo $_SESSION["userEmail"] ?>"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Điện Thoại</td>
+                                            <td><input type="text" value="<?php echo $_SESSION["userAddress"] ?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td><input type="email" value="<?php echo $_SESSION["userPhone"] ?>"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <?php ?>
                             </div>
                         </div>
 
@@ -84,69 +69,124 @@ if (isset($_GET["sl"])) {
                                 <div class="col-md-2 tt">Thành tiền</div>
                             </div>
                         </div>
+                        <?php
+//                            if (isset($_SESSION["foods"]) && count($_SESSION["foods"]) > 0) {
+                        $total_money = 0;
+                        $All_money = 0;
+                        $dg = 0;
+//                                $j = 0;
+//                                foreach ($_SESSION["foods"] as $item) {
+//                                     print_r($_SESSION["foods"]);
+//                                    $itemID = $item["pro_id"];
+//                                    //request model -> Foood ->Show
+//                                    $lstFood = current(FoodDetail::showCart($itemID));
+//                                    print_r($lstFood);
+//                                    $sl = $item["quantity"];
+//                                    $dg = $lstFood->price;
+//                                    $total_money = $sl * $dg;
+//                                    $All_money +=$total_money;
 
-                        <div class="row content">
-                            <div class="container-fluid">
-                                <div class="row item" id="cart_combo_67_1">
-                                    <div class="col-md-6 ttsp">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-4 tit">
-                                                <a class="btn button-close" onclick="product.remove_product('combo_67_1');">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
-                                                <span class="pname">Combo Gà Vảy Bắp Sốt Bơ 1 Người</span>
+                        if (isset($lstFood)) {
+                            //print_r($lstFood);
+                            //echo '<br>';
+                            echo '<input type="hidden" id="slCart" value=' . count($lstFood) . '>';
+                            foreach ($lstFood as $foods) {
+                                foreach ($foods as $food) {
+                                    //print_r ($food);
+
+                                    $sl = $food["sl"];
+                                    $dg = $food["foodPrice"];
+                                    $id = $food["foodId"];
+                                    $total_money = $sl * $dg;
+                                    $All_money += $total_money;
+                                    ?> 
+                                    <div class="row content">
+                                        <div class="container-fluid">
+                                            <div class="row item" id="cart_combo_67_1">
+                                                <div class="col-md-6 ttsp">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-md-4 tit">
+                                                            <a class="btn button-close" onclick="product.remove_product('combo_67_1');">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                            <span class="pname">
+                                                                <?php echo  $food["foodName"]; ?> 
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 wap-price">
+
+                                                    <div class="row" method = "Post" >
+                                                        <div class="col-md-4 dg" style="text-align:center">
+                                                            <div class="price">
+                                                                <label><p><?php echo $dg ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 sl">
+                                                            <input name="soluong" type="number"  
+                                                                   onchange='Capnhatsl(this)' value="<?php echo $sl ?>" id="<?php echo $id; ?>" style="width: 110%;" min="0">
+                                                        </div>
+                                                        <div class="col-md-4 tt" style="text-align:center">
+                                                            <div class="price" id="#">
+                                                                <label ><p><?php echo $total_money; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <!--                                    <div class="row total wap-dktv">
+                                                                                <div class="col-md-4 col-sm-6">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-md-push-1 text-right">
+                                                                                    <div class="clearfix b-mobile b-left">
+                                                                                        <label class="nhan text-uppercase">TỔNG THANH TOÁN</label>
+                                                                                    </div>
+                                                                                    <div class="price b-mobile b-right clearfix">
+                                                                                        <input type="hidden" name="coupon" id="coupon" value="">
+                                                                                        <div id="cart_total_price">
+                                                                                            <label ><p><?php echo $total_money; ?></p></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>-->
+
+
+
                                     </div>
-                                    <div class="col-md-6 wap-price">
-
-                                        <div class="row" method = "Post" >
-                                            <div class="col-md-4 dg" style="text-align:center">
-                                                <div class="price">
-                                                    <label><p>100.000</p></label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 sl">
-                                                <input name="soluong" type="number"  onchange='Capnhatsl(this)' value="<?php echo '' . $sol . ''; ?>" style="width: 111%;" min="0">
-                                            </div>
-                                            <div class="col-md-4 tt" style="text-align:center">
-                                                <div class="price" id="#">
-                                                    <label ><p><?php echo number_format($tt); ?> VNĐ</p></label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <?php
+                                }
+                            }
+                        }
+                        //}
+                        ?>
+                        <div class="row total wap-dktv">
+                            <div class="col-md-4 col-sm-6">
+                            </div>
+                            <div class="col-md-6 col-md-push-1 text-right">
+                                <div class="clearfix b-mobile b-left">
+                                    <label class="nhan text-uppercase">TỔNG THANH TOÁN</label>
+                                </div>
+                                <div class="price b-mobile b-right clearfix">
+                                    <input type="hidden" name="coupon" id="coupon" value="">
+                                    <div id="cart_total_price">
+                                        <label ><p><?php echo $All_money; ?></p></label>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row total wap-dktv">
-                                <div class="col-md-4 col-sm-6">
-                                </div>
-                                <div class="col-md-6 col-md-push-1 text-right">
-                                    <div class="clearfix b-mobile b-left">
-                                        <label class="nhan text-uppercase">TỔNG THANH TOÁN</label>
-                                    </div>
-                                    <div class="price b-mobile b-right clearfix">
-                                        <input type="hidden" name="coupon" id="coupon" value="">
-                                        <div id="cart_total_price">
-                                            <label ><p><?php echo number_format($tt); ?> VNĐ</p></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
                         </div>
 
-                            <div class="row">
-                                <div class="col-md-6 top-mobile">
-                                </div>
-                                <div class="col-md-6 bot-mobile">
-                                    <a href="?controller=ThankYou&action=show"></a><button class="btn btn-success" type="button" style="float: right">đồng ý đặt hàng </button></a>
-                                    <button class="btn btn-default" type="button" style="float: right">hủy đơn hàng</button>
-                                </div>
+
+                        <div class="row">
+                            <div class="col-md-6 top-mobile">
                             </div>
+                            <div class="col-md-6 bot-mobile">
+                                <a href="?controller=ThankYou&action=show"><button class="btn btn-success" type="button" style="float: right">đồng ý đặt hàng </button></a>
+                                <button class="btn btn-default" type="button" style="float: right">hủy đơn hàng</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -157,11 +197,40 @@ if (isset($_GET["sl"])) {
             </div>
 
             <script type="text/javascript">
-                function Capnhatsl(a)
-                {
-                    window.location = "/phpProject/?controller=ThongTinGiaoHang&action=show&sl=" + a.value;
-                }
-
+//                function Capnhatsl(a)
+//                {
+//                    window.location = "/phpProject/?controller=ThongTinGiaoHang&action=show&sl=" + a.value;
+//                }
+$(document).ready(function() {
+        var slCart = $("#slCart").val();
+        var numberCart = " " + slCart + " ";
+        if (slCart != null) {
+            $("#numberCart").text(numberCart);
+        }
+    });
+    function Capnhatsl(a)
+    {
+        //window.location.href = "?controller=Cart&action=AddToCart&food_id="+a.id+"&sl=" + a.value;
+        var object = {
+            food_id: a.id,
+            sl: a.value,
+            ttgh: 1
+        };
+        var url = "?controller=Cart&action=AddToCart";
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: object,
+            success: function (data) {
+                let myArr = data.split("-***myJSONCart1***-");
+                let myJson = JSON.parse(myArr[1]);
+                //var textURL = myJson[0].textURL;
+                //?controller=Cart&action=AddToCart
+                window.location.href = myJson;
+                
+            }
+        });
+    }
             </script>
 
 

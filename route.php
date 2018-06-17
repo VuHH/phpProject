@@ -46,6 +46,7 @@ function call($controller, $action) {
                     $controller = new CommentController();
                     break;
                 case 'GioHang':
+                    require_once 'Model/Food.php';
                         $controller = new GioHangController();
 			break;
                 case 'DangNhapDatHang':
@@ -53,12 +54,14 @@ function call($controller, $action) {
 			break;
                 case 'MuaHangKhongTaiKhoan':
                         $controller = new MuaHangKhongTaiKhoanController();
+                        break;
                 case 'Comment':
 			require_once 'Model/Comment.php';
 			require_once 'Model/Food.php';
 			$controller = new CommentController();
 			break;
                 case 'ThongTinGiaoHang':
+                    require_once 'Model/Food.php';
                         $controller = new ThongTinGiaoHangController();
 			break;
                 case 'ThankYou':
@@ -88,6 +91,14 @@ function call($controller, $action) {
                     require_once 'Model/Feedback.php';
                         $controller = new FeedbackController();
                         break;
+                case 'Cart':
+                        require_once 'Model/FoodDetail.php';
+                        $controller = new CartController();
+                        break;
+                case 'SignInCart':
+                    require_once 'Model/Customer.php';
+                    $controller = new SignInCartController();
+	            break;
     }
 
 	// call the action
@@ -99,7 +110,7 @@ function call($controller, $action) {
 $controllers = array('HomePage' => ['home', 'error'],
 		     'User' => ['showAll', 'addUser'],
                      'Contact' => ['show', 'error'],
-                     'SignIn' => ['show', 'loginAction', 'logoutAction', 'error'],
+                     'SignIn' => ['show', 'loginAction', 'logoutAction', 'showLoginCart','error'],
                      'SignUp' => ['add'],
                      'Profile' => ['show', 'updateProfie', 'changePass'],
                      'Menu' => ['show', 'error'],
@@ -117,6 +128,8 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'NewsDetail' => ['show', 'error'],
                      'ShowNews' => ['show', 'error'],
                      'Feedback' => ['add','showadd','show', 'error'],
+                     'Cart' => ['AddToCart', 'error', 'show'],
+                     'SignInCart' => ['loginAction', 'show', '']
     );
 
 // check that the requested controller and action are both allowed

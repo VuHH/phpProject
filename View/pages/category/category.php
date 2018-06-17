@@ -2,8 +2,10 @@
     <div class="col-sm-12">
         <h2 class="text-center category-title">Danh sách món ăn</h2>
         <div class="row food-review">
-        <?php 
+        <?php
+            $count = 0;
             foreach ($lstFood as $food) {
+                $count++;
                 echo '<form action="?controller=FoodDetail&action=show" method="post" class="category-form">';
                 echo '<div class="col-sm-4">';
                 echo '<div class="card myCategory">';
@@ -14,10 +16,12 @@
                 . '<span class="category-price">'
                         . '<span class="currency">',$food->price,'</span>'
                 . '</span>';
-                echo '<i class="fas fa-plus-square fa-lg category-button"></i>
+                echo '<div id="solTitle"><a href="#" id="'.$food->id.'">
+                        <i class="fas fa-plus-square fa-lg category-button"></i></a></div>
                       </p>
                       </div></div></div>';
-                echo '<input type="hidden" name="foodID" value="'.$food->id.'" >';
+//                echo '<input type="hidden" name="foodIDCart" id="foodIDCart_'.$count.'" value="'.$food->id.'" >';
+//                echo '<input type="hidden" name="countCart" id="countCart_" value="'.$count.'" >';
                 echo '</form>';
             }
         ?>
@@ -25,11 +29,33 @@
     </div>
 </div>
 <script>
-//    $('.card-img-top').click(function() {
-//        $('.category-form').submit();
-//    });
-//    
-//    $('.card-title').click(function() {
-//        $('.category-form').submit();
-//    });
+$(document).ready(function() {
+    
+    
+    //?controller=Cart&action=AddToCart&food_id=
+
+    $("#solTitle a").click(function() {
+        var foodID =$(this).attr("id");
+        var object = { food_id : foodID };
+        var url = "?controller=Cart&action=AddToCart";
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: object,
+            success: function (data) {
+                let myArr = data.split("-***myJSONCart***-");
+                //console.log(myArr[0]);
+                let myJson = JSON.parse(myArr[1]);
+                if (myJson != 0) {
+                    var number = " " +myJson +" ";
+                    $("#numberCart").text(number);
+                }
+                //window.location.href = myJson;
+                
+            }
+        });
+        
+    });
+    
+});
 </script>

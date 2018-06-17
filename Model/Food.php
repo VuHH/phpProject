@@ -102,6 +102,64 @@ class Food {
             return $lstFood;
         
     }
+    
+    public static function showCart($foodID,$sl,$conn) {
+
+
+        //echo $foodID;
+//-         $lstFood;
+            $lstFood = [];//+
+            //$item;//+
+            $sql = "SELECT * FROM food WHERE FoodID = '".$foodID."'";
+            //echo $sql;
+            $result = $conn->query($sql);
+            $item = [];
+            
+            if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+                                $item = array(
+                                    "foodId" =>$row["FoodID"],
+                                    "foodName"=>$row["FoodName"],
+                                    "foodPrice"=>$row["Price"],
+                                    "sl"=>$sl);
+                                array_push($lstFood, $item);
+			}
+		} else {
+			echo "0 results";
+		}
+		
+		//echo $lstMenu;
+		return $lstFood;
+
+//-            if ($result->num_rows > 0) {
+//-                while($row = $result->fetch_assoc()) {
+//-                $sql2 = "SELECT * FROM type WHERE TypeID IN ('".$row["TypeID"]."')";
+//-                $resultType = $conn->query($sql2);
+//-                if ($resultType->num_rows > 0) {
+//-                    while($rowType = $resultType->fetch_assoc()) {
+//-                        $lstFood = new FoodDetail(
+
+//            if ($result->num_rows > 0) //+
+//            {
+//                while($row = $result->fetch_assoc()) //+
+//                {        //+
+//                    $item = new FoodDetail(//+
+//                                $row["FoodID"], $row["FoodName"], $row["FoodDescribe"],//+
+// //-                                $row["DirImage"], $row["Price"], $rowType["TypeName"]);
+////-                    }
+//                                $row["DirImage"], $row["Price"], $row["TypeID"]);//+
+//                    array_push($lstFood, $item);//+
+//
+//                }
+//                
+//            } else {
+//                    echo "0 results";
+//            }
+//		//-$conn->close();
+//            //+$conn->close();
+//            return $lstFood;
+	}
         
     
 }
