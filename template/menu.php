@@ -20,11 +20,11 @@ if (!isset($_SESSION))
       <div class="navbar-header menu-login" id="loginMenu">
         <div id="notLogin">
         <?php
-            ob_start(); 
+            //ob_start(); 
             if (isset($_SESSION['userName']))
             {
             	$username = $_SESSION["userName"];
-                ob_start();        
+                //ob_start();        
             	echo '<div class="row">';
                 echo '<div class="col-sm-12 text-center">';
                 echo '<a href="?controller=Profile&action=show">';
@@ -35,7 +35,7 @@ if (!isset($_SESSION))
                 echo '</div>';
             }
             else {
-                ob_start();
+                //ob_start();
             	echo '<div class="row">';
                 echo '<div class="col-sm-6">';
                 //echo '<a href="">';

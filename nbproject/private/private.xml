@@ -3,20 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/phpProject/Controller/MenuController.php</file>
-            <file>file:/C:/wamp64/www/phpProject/lib/js/appMenu.js</file>
-            <file>file:/C:/wamp64/www/phpProject/View/pages/signup/registerHome.php</file>
-            <file>file:/C:/wamp64/www/phpProject/View/pages/signin/signin.php</file>
-            <file>file:/C:/wamp64/www/phpProject/route.php</file>
-            <file>file:/C:/wamp64/www/phpProject/lib/js/validateRegisterForm.js</file>
-            <file>file:/C:/wamp64/www/phpProject/lib/js/appLogOut.js</file>
-            <file>file:/C:/wamp64/www/phpProject/Model/Customer.php</file>
-            <file>file:/C:/wamp64/www/phpProject/Controller/SignInController.php</file>
-            <file>file:/C:/wamp64/www/phpProject/Controller/HomePageController.php</file>
-            <file>file:/C:/wamp64/www/phpProject/Model/connectDB.php</file>
-            <file>file:/C:/wamp64/www/phpProject/template/menu.php</file>
-            <file>file:/C:/wamp64/www/phpProject/lib/js/appSignIn.js</file>
-            <file>file:/C:/wamp64/www/phpProject/View/pages/home/ViewHomePage.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/phpProject/View/pages/home/ViewHomePage.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/phpProject/lib/css/style.css</file>
         </group>
     </open-files>
 </project-private>

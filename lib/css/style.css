@@ -1152,6 +1152,7 @@ nav.navbar-collapse{
 .welcome-title {
 	font-size: 1.25em;
 	text-align: center;
+        display: block;
 }
 .welcome-texts {
 	text-align: center;
@@ -1220,6 +1221,10 @@ nav.navbar-collapse{
 .menus-container .featured-img img {
 	max-width: inherit;
 	width: 100%;
+}
+
+.our-menu-title {
+    margin: 5% 0;
 }
 
 /* 7 - Our Menus Section End
