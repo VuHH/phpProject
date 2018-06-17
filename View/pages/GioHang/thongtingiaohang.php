@@ -105,11 +105,15 @@ if (isset($_GET["username"])) {
                                             <div class="row item" id="cart_combo_67_1">
                                                 <div class="col-md-6 ttsp">
                                                     <div class="row">
-                                                        <div class="col-xs-12 col-md-4 tit">
-                                                            <a class="btn button-close" onclick="product.remove_product('combo_67_1');">
+                                                        <div class="col-xs-6">
+                                                            <div id="trashIcon" style="margin-left: 50px;margin-top: 5px;font-size:24px">
+                                                            <a id="<?php echo $id ?>">
                                                                 <i class="fa fa-trash"></i>
                                                             </a>
-                                                            <span class="pname">
+                                                            </div>
+                                                        </div>
+                                                         <div class="col-xs-6">
+                                                            <span class="pname text-center">
                                                                 <?php echo  $food["foodName"]; ?> 
                                                             </span>
                                                         </div>
@@ -136,25 +140,6 @@ if (isset($_GET["username"])) {
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!--                                    <div class="row total wap-dktv">
-                                                                                <div class="col-md-4 col-sm-6">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-md-push-1 text-right">
-                                                                                    <div class="clearfix b-mobile b-left">
-                                                                                        <label class="nhan text-uppercase">TỔNG THANH TOÁN</label>
-                                                                                    </div>
-                                                                                    <div class="price b-mobile b-right clearfix">
-                                                                                        <input type="hidden" name="coupon" id="coupon" value="">
-                                                                                        <div id="cart_total_price">
-                                                                                            <label ><p><?php echo $total_money; ?></p></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>-->
-
-
-
                                     </div>
                                     <?php
                                 }
@@ -184,7 +169,7 @@ if (isset($_GET["username"])) {
                             </div>
                             <div class="col-md-6 bot-mobile">
                                 <a href="?controller=ThankYou&action=show"><button class="btn btn-success" type="button" style="float: right">đồng ý đặt hàng </button></a>
-                                <button class="btn btn-default" type="button" style="float: right">hủy đơn hàng</button>
+                                <a href="?controller=HomePage&action=home"><button class="btn btn-default" type="button" style="float: right">hủy đơn hàng</button></a>
                             </div>
                         </div>
                     </div>
@@ -231,6 +216,25 @@ $(document).ready(function() {
             }
         });
     }
-            </script>
+    $("#trashIcon a").click(function(){
+        var foodID =$(this).attr("id");
+        var object = {food_id : foodID,ttgh: 1};
+        var url = "?controller=Cart&action=RemoveToCart";
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: object,
+            success: function (data) {
+                let myArr = data.split("-***myJSONRemove***-");
+                let myJson = JSON.parse(myArr[1]);
+                //var textURL = myJson[0].textURL;
+                //?controller=Cart&action=AddToCart
+                window.location.href = myJson;
+                
+            }
+        });
+    });
+    
+</script>
 
 

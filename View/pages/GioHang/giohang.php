@@ -34,13 +34,9 @@
             <div class="row">
                 <?php
                 echo '<div class="col-md-2 ttsp">';
-                echo "<a href='?controller=Cart&action=AddToCart&xoa' class='btn button-close'>";
+                echo "<a href='?controller=Cart&action=RemoveAll' class='btn button-close'>";
                 echo" <i class='fa fa-trash'> </i>
                     </a> ";
-                if (isset($_SESSION["foods"]) && isset($_GET["xoa"])) {
-                    unset($_SESSION['foods']);
-                        echo '<script> window.location = "?Controller=home&action=show"; </script>';
-                }
                 echo"
                 </div>";
                 ?>
@@ -94,9 +90,11 @@
                                         <div class="col-md-6 wap-price">
                                             <div class="row">
                                                 <div class="col-md-4 sl">
-                                                    <a class="btn button-close">
+                                                    <div id="trashIcon">
+                                                    <a class="btn button-close" id="<?php echo $id ?>">
                                                         <i class="fa fa-trash"></i>
-                                                    </a>                                            
+                                                    </a>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4 sl">
                                                     <p><?php echo  $food["foodName"]; ?></p>
@@ -198,6 +196,25 @@
 
 
 <script type="text/javascript">
+    $("#trashIcon a").click(function(){
+        var foodID =$(this).attr("id");
+        var object = {food_id : foodID};
+        var url = "?controller=Cart&action=RemoveToCart";
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: object,
+            success: function (data) {
+                let myArr = data.split("-***myJSONRemove***-");
+                let myJson = JSON.parse(myArr[1]);
+                //var textURL = myJson[0].textURL;
+                //?controller=Cart&action=AddToCart
+                window.location.href = myJson;
+                
+            }
+        });
+    });
+    
     $(document).ready(function() {
         var slCart = $("#slCart").val();
         var numberCart = " " + slCart + " ";

@@ -167,10 +167,13 @@ function openTapLoadFeedback(evt, cityName) {
             let myJson = JSON.parse(myArr[1]);
             var output = "";
             for (var i = 0; i < myJson.length; i++) {
+                if (myJson[i].answerFeedback == null) {
+                    var answerFeeback = '';
+                }    
                 output += "<tr>" +
                             "<td class='text-center'>"+ myJson[i].feedbackDate+"</td>"+
                             "<td class='text-center'>"+ myJson[i].feedbackContent+"</td>"+
-                            "<td class='text-center'>"+ myJson[i].answerFeedback+"</td>"+
+                            "<td class='text-center'>"+ answerFeeback+"</td>"+
                             "</tr>";
 //                output += "<tr>" + 
 //                        "<td>"+orde1rDate +"</td>"+ 

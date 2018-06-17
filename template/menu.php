@@ -13,7 +13,7 @@ if (!isset($_SESSION))
    </button>
    <div id="main-menu" class="navbar navbar-default">
       <div class="navbar-header">
-         <a class="navbar-brand" href="#">
+         <a class="navbar-brand" href="?controller=HomePage&action=home">
          <img src="./images/home/logo.png" alt="Foody Logo" style="margin: 0 auto; display: block">
          </a>
       </div>
@@ -52,6 +52,8 @@ if (!isset($_SESSION))
         <?php
             if (isset($_SESSION["numberCart"])) {
                 echo '<input type="hidden" id="numberCartInput" value='.$_SESSION["numberCart"].'>';   
+            } else {
+                echo '<input type="hidden" id="numberCartInput" value="0">';   
             }
             ?>
 <!--          </div>-->
@@ -74,7 +76,7 @@ if (!isset($_SESSION))
       </div>
       <nav class="navbar-collapse clearfix" role="navigation">
          <ul id="headernavigation" class="nav navbar-nav">
-            <li><a href="#">Trang chủ</a></li>
+            <li><a href="?controller=HomePage&action=home">Trang chủ</a></li>
             <li class="menu-item-has-children">
                <a href="#">Thực đơn</a>
                <span class="toggle_nav_button"></span>

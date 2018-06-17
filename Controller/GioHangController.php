@@ -48,7 +48,10 @@ class GioHangController {
 //                $All_money +=$total_money;
             }
             $conn->close();
-            $_SESSION["numberCart"] = count($lstFood);
+            if (isset($lstFood)) {
+                $_SESSION["numberCart"] = count($lstFood);
+            }
+            
             require_once 'View/pages/GioHang/giohang.php';
 	}
     }

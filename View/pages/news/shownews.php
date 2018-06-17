@@ -14,9 +14,9 @@
                  echo '<form action="?controller=NewsDetail&action=show" method="post" class="category-form">';
                 echo '<div class="col-sm-6">';
                 echo '<div class="card myCategory">';
-                echo '<button type="submit"><img class="card-img-top" src="'.$news->image.'" alt="'.$news->des.'"></button>';
+                echo '<button type="submit"><img class="card-img-top" src="'.$news->image.'" alt="'.utf8_encode($news->des).'"></button>';
                 echo '<div class="card-body category-line">';
-                echo '<button type="submit"><h6 class="card-title text-uppercase">',$news->title,'</h6></button>';
+                echo '<button type="submit"><h6 class="card-title text-uppercase">'.utf8_encode($news->title).'</h6></button>';
                 echo '<button type="submit" class="btn btn-info pull-right ">Xem Thêm</button>';
                 echo '    </div></div></div>';
                 echo '<input type="hidden" name="newsID" value="'.$news->id.'" >';

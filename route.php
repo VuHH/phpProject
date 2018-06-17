@@ -128,7 +128,7 @@ $controllers = array('HomePage' => ['home', 'error'],
                      'NewsDetail' => ['show', 'error'],
                      'ShowNews' => ['show', 'error'],
                      'Feedback' => ['add','showadd','show', 'error'],
-                     'Cart' => ['AddToCart', 'error', 'show'],
+                     'Cart' => ['AddToCart', 'error', 'show', 'RemoveToCart', 'RemoveAll'],
                      'SignInCart' => ['loginAction', 'show', '']
     );
 

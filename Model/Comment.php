@@ -66,7 +66,7 @@ class Comment {
             }
            
             return $lstComment;
-            $conn->close();
+            //$conn->close();
     }
 
 }

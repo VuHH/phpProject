@@ -9,7 +9,7 @@
                     <p class="field-detail">'.$lstFood->type.'</p>
                     <p class="field-detail title">'.$lstFood->name.'</p>
                     <p class="field-detail price">Price: '.$lstFood->price.'</p>
-                    <button class="btn btn-primary" type="button">Chọn</button>
+                    <div id="solTitle"><a id="'.$lstFood->id.'"><button class="btn btn-primary" type="button">Chọn</button></a></div>
                  ';
         ?>
     </div>
@@ -107,3 +107,34 @@
 </div>
 
 <script src="./././lib/js/appComment.js"></script>
+<script>
+$(document).ready(function() {
+    
+    
+    //?controller=Cart&action=AddToCart&food_id=
+
+    $("#solTitle a").click(function() {
+        var foodID =$(this).attr("id");
+        var object = { food_id : foodID };
+        var url = "?controller=Cart&action=AddToCart";
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: object,
+            success: function (data) {
+                let myArr = data.split("-***myJSONCart***-");
+                //console.log(myArr[0]);
+                let myJson = JSON.parse(myArr[1]);
+                if (myJson != 0) {
+                    var number = " " +myJson +" ";
+                    $("#numberCart").text(number);
+                }
+                //window.location.href = myJson;
+                
+            }
+        });
+        
+    });
+    
+});
+</script>

@@ -11,6 +11,7 @@
                 echo '<div class="card myCategory">';
                 echo '<button type="submit"><img class="card-img-top" src="'.$food->image.'" alt="'.$food->des.'"></button>';
                 echo '<div class="card-body category-line">';
+                echo '<input type="hidden" name="foodID" value="'.$food->id.'">';
                 echo '<button type="submit"><h6 class="card-title text-uppercase">',$food->name,'</h6></button>';
                 echo '<p class="card-text clearfix">'
                 . '<span class="category-price">'
