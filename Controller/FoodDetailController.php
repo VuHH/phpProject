@@ -5,9 +5,11 @@ class FoodDetailController {
             include 'Model/connectDB.php';
             $conn = connectDB();
             $foodID = $_POST['foodID'];
-            $lstFood = FoodDetail::show($foodID, $conn);
+            //$foodID = 10;
+            $lstFood = Food::showDetail($foodID, $conn);
             $lstComment = Comment::getAllComment($foodID, $conn);
-            require_once 'View/pages/detail/detail.php';
+            $conn->close();
+            require_once 'View/pages/detail/detail.php';    
 	}
 }
 

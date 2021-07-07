@@ -2,6 +2,6 @@
 return array(
 		"servername" => "localhost",
 		"username" => "root",
-		"password" => "",
+		"password" => "123",
 		"dbname" => "fastfoodmanager"
 );

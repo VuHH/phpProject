@@ -26,16 +26,17 @@ class Menu {
 			while($row = $result->fetch_assoc()) {
                                 $item = array(
                                     "id"=>$row["TypeID"],
-                                    "name"=>$row["TypeName"],
+                                    "name"=> utf8_encode($row["TypeName"]),
                                     "image"=>$row["DirImage"],
-                                    "des"=>$row["TypeDescribe"]);
+                                    "des"=>utf8_encode($row["TypeDescribe"]),
+                                    "isView"=>$row["IsView"]);
                                 array_push($lstMenu, $item);
 			}
 		} else {
 			echo "0 results";
 		}
 		$conn->close();
-		
+		//echo $lstMenu;
 		return $lstMenu;
 	}
 }

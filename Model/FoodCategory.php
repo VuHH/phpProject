@@ -22,7 +22,7 @@ class FoodCategory {
             $conn = connectDB();
             $lstFood = [];
             $item;
-            $sql = "SELECT * FROM food WHERE TypeID IN ('".$menuTypeID."')";
+            $sql = "SELECT * FROM food WHERE FoodName like '%$search%'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {

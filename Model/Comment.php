@@ -24,7 +24,8 @@ class Comment {
             include 'Model/connectDB.php';
             $conn = connectDB();
             $sql = "INSERT INTO comment (CommentID,CommentDate,CommentContent,CustomerID,FoodID,AnwserComment,AnwserDate,IsView) "
-                    . "VALUES ('".uniqid()."',".date("Y/m/d").",'".$txtComment."','".$customerID."','".$foodID."',null,".date("Y/m/d").",1)";
+                    . "VALUES ('".uniqid()."','".date("Y/m/d")."','".$txtComment."','".$customerID."','".$foodID."',null,'".date("Y/m/d")."',1)";
+            //echo $sql;
             $result = $conn->query($sql);
             if ($conn->query($sql) === TRUE) {
                 return true;
@@ -34,7 +35,7 @@ class Comment {
             $conn->close();
 	}
         
-    public function getComment($foodID) {
+    public static function getComment($foodID) {
         // Lay comment theo foodID
         $sql2 = 'select c.CommentContent, f.FoodID, f.FoodName, c.AnwserComment 
                 from food f, comment c where f.FoodID = c.FoodID and c.FoodId  = foodID';
@@ -43,11 +44,12 @@ class Comment {
 
     }
     
-    public function getAllComment($foodID,$conn) {
+    public static function getAllComment($foodID,$conn) {
         $sql = "SELECT cust.CustomerName, com.CommentContent, com.CommentDate, "
                 . "com.AnwserComment, com.AnwserDate FROM comment com, "
                 . "customer cust WHERE cust.CustomerID = com.CustomerID AND "
                 . "com.FoodID = '".$foodID."' AND IsView = 1";
+        //echo $sql;
         $result = $conn->query($sql);
         $lstComment = array();
         if ($result->num_rows > 0) {
@@ -64,8 +66,9 @@ class Comment {
             }
            
             return $lstComment;
-            $conn->close();
+            //$conn->close();
     }
+
 }
 
 ?>
